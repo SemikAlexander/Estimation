@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.настройкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.курсыВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +45,9 @@
             this.SumPrise = new System.Windows.Forms.TextBox();
             this.CoursePrise = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.progressChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.AddBoughtCurrency = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressChart)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -104,6 +99,7 @@
             // 
             // progressDataGridView
             // 
+            this.progressDataGridView.AllowUserToAddRows = false;
             this.progressDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.progressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PurchasedSumDollar,
@@ -112,18 +108,19 @@
             this.progressDataGridView.Name = "progressDataGridView";
             this.progressDataGridView.Size = new System.Drawing.Size(247, 420);
             this.progressDataGridView.TabIndex = 1;
+            this.progressDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressDataGridView_CellDoubleClick);
             // 
             // PurchasedSumDollar
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.PurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.PurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle3;
             this.PurchasedSumDollar.HeaderText = "Сумма";
             this.PurchasedSumDollar.Name = "PurchasedSumDollar";
             // 
             // CoursePurchasedSumDollar
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.CoursePurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.CoursePurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle4;
             this.CoursePurchasedSumDollar.HeaderText = "Курс";
             this.CoursePurchasedSumDollar.Name = "CoursePurchasedSumDollar";
             // 
@@ -138,6 +135,7 @@
             this.ChoiseCurrency.Name = "ChoiseCurrency";
             this.ChoiseCurrency.Size = new System.Drawing.Size(137, 24);
             this.ChoiseCurrency.TabIndex = 2;
+            this.ChoiseCurrency.SelectedIndexChanged += new System.EventHandler(this.ChoiseCurrency_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -182,25 +180,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Курс";
             // 
-            // progressChart
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.progressChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.progressChart.Legends.Add(legend1);
-            this.progressChart.Location = new System.Drawing.Point(408, 31);
-            this.progressChart.Name = "progressChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series1.Legend = "Legend1";
-            series1.MarkerSize = 9;
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Series1";
-            this.progressChart.Series.Add(series1);
-            this.progressChart.Size = new System.Drawing.Size(514, 420);
-            this.progressChart.TabIndex = 8;
-            this.progressChart.Text = "chart1";
-            // 
             // AddBoughtCurrency
             // 
             this.AddBoughtCurrency.Location = new System.Drawing.Point(34, 166);
@@ -217,7 +196,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 463);
             this.Controls.Add(this.AddBoughtCurrency);
-            this.Controls.Add(this.progressChart);
             this.Controls.Add(this.CoursePrise);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SumPrise);
@@ -235,7 +213,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +235,6 @@
         private System.Windows.Forms.TextBox SumPrise;
         private System.Windows.Forms.TextBox CoursePrise;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart progressChart;
         private System.Windows.Forms.Button AddBoughtCurrency;
     }
 }
