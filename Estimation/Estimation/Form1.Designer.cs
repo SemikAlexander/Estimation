@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.покупкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.продажаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.курсыВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.началоДняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.долларToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.евроToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.гривнаToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.всёToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расходыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.долларToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +52,8 @@
             this.генерацияОтчётаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressDataGridView = new System.Windows.Forms.DataGridView();
+            this.PurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CoursePurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChoiseCurrency = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,11 +61,6 @@
             this.CoursePrise = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AddBoughtCurrency = new System.Windows.Forms.Button();
-            this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.покупкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.продажаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CoursePurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +80,31 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // действиеToolStripMenuItem
+            // 
+            this.действиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.покупкаToolStripMenuItem,
+            this.продажаToolStripMenuItem});
+            this.действиеToolStripMenuItem.Name = "действиеToolStripMenuItem";
+            this.действиеToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
+            this.действиеToolStripMenuItem.Text = "Действие";
+            // 
+            // покупкаToolStripMenuItem
+            // 
+            this.покупкаToolStripMenuItem.CheckOnClick = true;
+            this.покупкаToolStripMenuItem.Name = "покупкаToolStripMenuItem";
+            this.покупкаToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.покупкаToolStripMenuItem.Text = "Покупка";
+            this.покупкаToolStripMenuItem.Click += new System.EventHandler(this.покупкаToolStripMenuItem_Click);
+            // 
+            // продажаToolStripMenuItem
+            // 
+            this.продажаToolStripMenuItem.CheckOnClick = true;
+            this.продажаToolStripMenuItem.Name = "продажаToolStripMenuItem";
+            this.продажаToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.продажаToolStripMenuItem.Text = "Продажа";
+            this.продажаToolStripMenuItem.Click += new System.EventHandler(this.продажаToolStripMenuItem_Click);
+            // 
             // настройкаToolStripMenuItem
             // 
             this.настройкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -102,38 +123,10 @@
             // 
             // началоДняToolStripMenuItem
             // 
-            this.началоДняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.долларToolStripMenuItem2,
-            this.евроToolStripMenuItem2,
-            this.гривнаToolStripMenuItem2,
-            this.всёToolStripMenuItem2});
             this.началоДняToolStripMenuItem.Name = "началоДняToolStripMenuItem";
             this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.началоДняToolStripMenuItem.Text = "Начало дня";
-            // 
-            // долларToolStripMenuItem2
-            // 
-            this.долларToolStripMenuItem2.Name = "долларToolStripMenuItem2";
-            this.долларToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
-            this.долларToolStripMenuItem2.Text = "Доллар";
-            // 
-            // евроToolStripMenuItem2
-            // 
-            this.евроToolStripMenuItem2.Name = "евроToolStripMenuItem2";
-            this.евроToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
-            this.евроToolStripMenuItem2.Text = "Евро";
-            // 
-            // гривнаToolStripMenuItem2
-            // 
-            this.гривнаToolStripMenuItem2.Name = "гривнаToolStripMenuItem2";
-            this.гривнаToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
-            this.гривнаToolStripMenuItem2.Text = "Гривна";
-            // 
-            // всёToolStripMenuItem2
-            // 
-            this.всёToolStripMenuItem2.Name = "всёToolStripMenuItem2";
-            this.всёToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
-            this.всёToolStripMenuItem2.Text = "Всё";
+            this.началоДняToolStripMenuItem.Click += new System.EventHandler(this.началоДняToolStripMenuItem_Click);
             // 
             // отчётToolStripMenuItem
             // 
@@ -240,6 +233,21 @@
             this.progressDataGridView.TabIndex = 1;
             this.progressDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressDataGridView_CellDoubleClick);
             // 
+            // PurchasedSumDollar
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.PurchasedSumDollar.HeaderText = "Сумма";
+            this.PurchasedSumDollar.Name = "PurchasedSumDollar";
+            // 
+            // CoursePurchasedSumDollar
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.CoursePurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CoursePurchasedSumDollar.HeaderText = "Курс";
+            this.CoursePurchasedSumDollar.Name = "CoursePurchasedSumDollar";
+            this.CoursePurchasedSumDollar.Width = 110;
+            // 
             // ChoiseCurrency
             // 
             this.ChoiseCurrency.FormattingEnabled = true;
@@ -306,46 +314,6 @@
             this.AddBoughtCurrency.UseVisualStyleBackColor = true;
             this.AddBoughtCurrency.Click += new System.EventHandler(this.button1_Click);
             // 
-            // действиеToolStripMenuItem
-            // 
-            this.действиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.покупкаToolStripMenuItem,
-            this.продажаToolStripMenuItem});
-            this.действиеToolStripMenuItem.Name = "действиеToolStripMenuItem";
-            this.действиеToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
-            this.действиеToolStripMenuItem.Text = "Действие";
-            // 
-            // покупкаToolStripMenuItem
-            // 
-            this.покупкаToolStripMenuItem.CheckOnClick = true;
-            this.покупкаToolStripMenuItem.Name = "покупкаToolStripMenuItem";
-            this.покупкаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.покупкаToolStripMenuItem.Text = "Покупка";
-            this.покупкаToolStripMenuItem.Click += new System.EventHandler(this.покупкаToolStripMenuItem_Click);
-            // 
-            // продажаToolStripMenuItem
-            // 
-            this.продажаToolStripMenuItem.CheckOnClick = true;
-            this.продажаToolStripMenuItem.Name = "продажаToolStripMenuItem";
-            this.продажаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.продажаToolStripMenuItem.Text = "Продажа";
-            this.продажаToolStripMenuItem.Click += new System.EventHandler(this.продажаToolStripMenuItem_Click);
-            // 
-            // PurchasedSumDollar
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.PurchasedSumDollar.HeaderText = "Сумма";
-            this.PurchasedSumDollar.Name = "PurchasedSumDollar";
-            // 
-            // CoursePurchasedSumDollar
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.CoursePurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CoursePurchasedSumDollar.HeaderText = "Курс";
-            this.CoursePurchasedSumDollar.Name = "CoursePurchasedSumDollar";
-            this.CoursePurchasedSumDollar.Width = 110;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -367,6 +335,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).EndInit();
@@ -402,10 +371,6 @@
         private System.Windows.Forms.ToolStripMenuItem всёToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem генерацияОтчётаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem началоДняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem долларToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem евроToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem гривнаToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem всёToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem действиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem покупкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem продажаToolStripMenuItem;

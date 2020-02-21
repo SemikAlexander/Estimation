@@ -25,7 +25,7 @@ namespace Estimation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("63")]
         public double DollarPurchase {
             get {
                 return ((double)(this["DollarPurchase"]));
@@ -37,7 +37,7 @@ namespace Estimation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("66.5")]
         public double DollarSale {
             get {
                 return ((double)(this["DollarSale"]));
@@ -49,7 +49,7 @@ namespace Estimation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("68")]
         public double EuroPurchase {
             get {
                 return ((double)(this["EuroPurchase"]));
@@ -61,7 +61,7 @@ namespace Estimation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("72")]
         public double EuroSale {
             get {
                 return ((double)(this["EuroSale"]));
@@ -73,7 +73,7 @@ namespace Estimation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.4")]
         public double HryvnaPurchase {
             get {
                 return ((double)(this["HryvnaPurchase"]));
@@ -85,7 +85,7 @@ namespace Estimation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.63")]
         public double HryvnaSale {
             get {
                 return ((double)(this["HryvnaSale"]));

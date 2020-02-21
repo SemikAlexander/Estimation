@@ -3,22 +3,22 @@
   <Profiles />
   <Settings>
     <Setting Name="DollarPurchase" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">63</Value>
     </Setting>
     <Setting Name="DollarSale" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">66.5</Value>
     </Setting>
     <Setting Name="EuroPurchase" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">68</Value>
     </Setting>
     <Setting Name="EuroSale" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">72</Value>
     </Setting>
     <Setting Name="HryvnaPurchase" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">2.4</Value>
     </Setting>
     <Setting Name="HryvnaSale" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">2.63</Value>
     </Setting>
   </Settings>
 </SettingsFile>
