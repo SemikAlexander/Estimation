@@ -68,25 +68,41 @@ namespace Estimation
 
         private void ChoiseCurrency_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int res = 0;
             switch (typeOfOperations.SelectedIndex)
             {
                 case 0: /*Приход*/
                     switch (ChoiseCurrency.SelectedIndex)
                     {
                         case 0:
+                            res = 0;
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.dollar.Count; i++)
+                            {
                                 progressDataGridView.Rows.Add(source.dollar[i].Sum, source.dollar[i].Course);
+                                res += Convert.ToInt32(source.dollar[i].Sum * source.dollar[i].Course);
+                            }
+                            this.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 1:
+                            res = 0;
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.euro.Count; i++)
+                            {
                                 progressDataGridView.Rows.Add(source.euro[i].Sum, source.euro[i].Course);
+                                res += Convert.ToInt32(source.euro[i].Sum * source.euro[i].Course);
+                            }
+                            this.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 2:
+                            res = 0;
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.hryvnia.Count; i++)
+                            {
                                 progressDataGridView.Rows.Add(source.hryvnia[i].Sum, source.hryvnia[i].Course);
+                                res += Convert.ToInt32(source.hryvnia[i].Sum * source.hryvnia[i].Course);
+                            }
+                            this.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                     }
                     break;
@@ -94,19 +110,34 @@ namespace Estimation
                     switch (ChoiseCurrency.SelectedIndex)
                     {
                         case 0:
+                            res = 0;
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.saleDollar.Count; i++)
+                            {
                                 progressDataGridView.Rows.Add(source.saleDollar[i].Sum, source.saleDollar[i].Course);
+                                res += Convert.ToInt32(source.saleDollar[i].Sum * source.saleDollar[i].Course);
+                            }
+                            this.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 1:
+                            res = 0;
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.saleEuro.Count; i++)
+                            {
                                 progressDataGridView.Rows.Add(source.saleEuro[i].Sum, source.saleEuro[i].Course);
+                                res += Convert.ToInt32(source.saleEuro[i].Sum * source.saleEuro[i].Course);
+                            }
+                            this.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 2:
+                            res = 0;
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.saleHryvnia.Count; i++)
+                            {
                                 progressDataGridView.Rows.Add(source.saleHryvnia[i].Sum, source.saleHryvnia[i].Course);
+                                res += Convert.ToInt32(source.saleHryvnia[i].Sum * source.saleHryvnia[i].Course);
+                            }
+                            this.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                     }
                     break;
