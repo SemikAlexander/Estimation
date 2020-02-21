@@ -141,6 +141,7 @@
             this.progressDataGridView.Size = new System.Drawing.Size(263, 165);
             this.progressDataGridView.TabIndex = 10;
             this.progressDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressDataGridView_CellContentDoubleClick);
+            this.progressDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressDataGridView_CellDoubleClick);
             // 
             // PurchasedSumDollar
             // 

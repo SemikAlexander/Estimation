@@ -40,15 +40,6 @@
             this.началоДняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расходыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.долларToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.евроToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.гривнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.всёToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.приходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.долларToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.евроToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.гривнаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.всёToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.генерацияОтчётаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressDataGridView = new System.Windows.Forms.DataGridView();
@@ -117,14 +108,14 @@
             // курсыВалютToolStripMenuItem
             // 
             this.курсыВалютToolStripMenuItem.Name = "курсыВалютToolStripMenuItem";
-            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.курсыВалютToolStripMenuItem.Text = "Курсы валют";
             this.курсыВалютToolStripMenuItem.Click += new System.EventHandler(this.курсыВалютToolStripMenuItem_Click);
             // 
             // началоДняToolStripMenuItem
             // 
             this.началоДняToolStripMenuItem.Name = "началоДняToolStripMenuItem";
-            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.началоДняToolStripMenuItem.Text = "Начало дня";
             this.началоДняToolStripMenuItem.Click += new System.EventHandler(this.началоДняToolStripMenuItem_Click);
             // 
@@ -132,7 +123,6 @@
             // 
             this.отчётToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.расходыToolStripMenuItem,
-            this.приходToolStripMenuItem,
             this.генерацияОтчётаToolStripMenuItem});
             this.отчётToolStripMenuItem.Name = "отчётToolStripMenuItem";
             this.отчётToolStripMenuItem.Size = new System.Drawing.Size(54, 21);
@@ -140,73 +130,10 @@
             // 
             // расходыToolStripMenuItem
             // 
-            this.расходыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.долларToolStripMenuItem,
-            this.евроToolStripMenuItem,
-            this.гривнаToolStripMenuItem,
-            this.всёToolStripMenuItem});
             this.расходыToolStripMenuItem.Name = "расходыToolStripMenuItem";
             this.расходыToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.расходыToolStripMenuItem.Text = "Расход";
-            // 
-            // долларToolStripMenuItem
-            // 
-            this.долларToolStripMenuItem.Name = "долларToolStripMenuItem";
-            this.долларToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.долларToolStripMenuItem.Text = "Доллар";
-            // 
-            // евроToolStripMenuItem
-            // 
-            this.евроToolStripMenuItem.Name = "евроToolStripMenuItem";
-            this.евроToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.евроToolStripMenuItem.Text = "Евро";
-            // 
-            // гривнаToolStripMenuItem
-            // 
-            this.гривнаToolStripMenuItem.Name = "гривнаToolStripMenuItem";
-            this.гривнаToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.гривнаToolStripMenuItem.Text = "Гривна";
-            // 
-            // всёToolStripMenuItem
-            // 
-            this.всёToolStripMenuItem.Name = "всёToolStripMenuItem";
-            this.всёToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.всёToolStripMenuItem.Text = "Всё";
-            // 
-            // приходToolStripMenuItem
-            // 
-            this.приходToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.долларToolStripMenuItem1,
-            this.евроToolStripMenuItem1,
-            this.гривнаToolStripMenuItem1,
-            this.всёToolStripMenuItem1});
-            this.приходToolStripMenuItem.Name = "приходToolStripMenuItem";
-            this.приходToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.приходToolStripMenuItem.Text = "Приход";
-            // 
-            // долларToolStripMenuItem1
-            // 
-            this.долларToolStripMenuItem1.Name = "долларToolStripMenuItem1";
-            this.долларToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
-            this.долларToolStripMenuItem1.Text = "Доллар";
-            // 
-            // евроToolStripMenuItem1
-            // 
-            this.евроToolStripMenuItem1.Name = "евроToolStripMenuItem1";
-            this.евроToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
-            this.евроToolStripMenuItem1.Text = "Евро";
-            // 
-            // гривнаToolStripMenuItem1
-            // 
-            this.гривнаToolStripMenuItem1.Name = "гривнаToolStripMenuItem1";
-            this.гривнаToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
-            this.гривнаToolStripMenuItem1.Text = "Гривна";
-            // 
-            // всёToolStripMenuItem1
-            // 
-            this.всёToolStripMenuItem1.Name = "всёToolStripMenuItem1";
-            this.всёToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
-            this.всёToolStripMenuItem1.Text = "Всё";
+            this.расходыToolStripMenuItem.Text = "Расход/Приход";
+            this.расходыToolStripMenuItem.Click += new System.EventHandler(this.расходыToolStripMenuItem_Click);
             // 
             // генерацияОтчётаToolStripMenuItem
             // 
@@ -360,15 +287,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddBoughtCurrency;
         private System.Windows.Forms.ToolStripMenuItem расходыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem долларToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem евроToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem гривнаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem всёToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem приходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem долларToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem евроToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem гривнаToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem всёToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem генерацияОтчётаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem началоДняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem действиеToolStripMenuItem;

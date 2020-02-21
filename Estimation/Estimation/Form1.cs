@@ -14,7 +14,7 @@ namespace Estimation
     public partial class Form1 : Form
     {
         Source source = new Source();
-        string act = "";    /**/
+        string act = "";
         public Form1()
         {
             InitializeComponent();
@@ -132,9 +132,9 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.hryvnia[i].Sum, source.hryvnia[i].Course);
                             foreach (DataGridViewRow row in progressDataGridView.Rows)
                             {
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["HryvniaPurchase"].ToString()))
+                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
                                     row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["HryvniaPurchase"].ToString()))
+                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
                                     row.DefaultCellStyle.ForeColor = Color.Red;
                             }
                             break;
@@ -211,8 +211,14 @@ namespace Estimation
 
         private void началоДняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StartDay startDay = new StartDay();
+            StartDay startDay = new StartDay(source);
             startDay.Show();
+        }
+
+        private void расходыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Costs costs = new Costs(source);
+            costs.Show();
         }
     }
 }

@@ -12,10 +12,11 @@ namespace Estimation
 {
     public partial class StartDay : Form
     {
-        Source source = new Source();
-        public StartDay()
+        Source source;
+        public StartDay(Source sourceForOutput)
         {
             InitializeComponent();
+            source = sourceForOutput;
         }
 
         private void StartDay_Load(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace Estimation
 
         private void ChoiseCurrency_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSum(ChoiseCurrency.SelectedIndex)})";
+            this.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";
         }
 
         private void AddBoughtCurrency_Click(object sender, EventArgs e)
@@ -112,6 +113,29 @@ namespace Estimation
                     for (int i = 0; i < source.startHryvnia.Count; i++)
                         progressDataGridView.Rows.Add(source.startHryvnia[i].Sum, source.startHryvnia[i].Course);
                     break;
+            }
+        }
+
+        private void progressDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы хотите удалить текущую строку?", "Действие", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                switch (ChoiseCurrency.SelectedIndex)
+                {
+                    case 0:
+                        source.DeleteData(Convert.ToInt32(e.RowIndex.ToString()), 0);
+                        FillingTable();
+                        break;
+                    case 1:
+                        source.DeleteData(Convert.ToInt32(e.RowIndex.ToString()), 1);
+                        FillingTable();
+                        break;
+                    case 2:
+                        source.DeleteData(Convert.ToInt32(e.RowIndex.ToString()), 2);
+                        FillingTable();
+                        break;
+                }
             }
         }
     }

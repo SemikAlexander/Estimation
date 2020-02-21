@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estimation
 {
-    class Source
+    public class Source
     {
         public struct Currency
         {
@@ -97,7 +97,7 @@ namespace Estimation
         {
             switch (act)
             {
-                case "":
+                case "purchase":
                     switch (choiseCurrency)
                     {
                         case 0:
@@ -162,7 +162,6 @@ namespace Estimation
             }
             return 0;
         }
-
         public int GetStartSumInCurrency(int choiseCurrency)
         {
             int res = 0;

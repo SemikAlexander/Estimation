@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Costs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Costs.Designer.cs">
+      <DependentUpon>Costs.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrencyRates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="StartDay.Designer.cs">
       <DependentUpon>StartDay.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Costs.resx">
+      <DependentUpon>Costs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CurrencyRates.resx">
       <DependentUpon>CurrencyRates.cs</DependentUpon>
     </EmbeddedResource>
