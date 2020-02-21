@@ -18,39 +18,87 @@ namespace Estimation
         public List<Currency> euro = new List<Currency>();
         public List<Currency> hryvnia = new List<Currency>();
 
-        public void AddData(string curse, string price, int choiseCurrency)
+        public List<Currency> saleDollar = new List<Currency>();
+        public List<Currency> saleEuro = new List<Currency>();
+        public List<Currency> saleHryvnia = new List<Currency>();
+
+        public void AddData(string curse, string price, int choiseCurrency, string act)
         {
-            switch (choiseCurrency)
+            switch (act)
             {
-                case 0:
-                    currency.Course = Convert.ToDouble(curse);
-                    currency.Sum = Convert.ToInt32(price);
-                    dollar.Add(currency);
+                case "purchase":
+                    switch (choiseCurrency)
+                    {
+                        case 0:
+                            currency.Course = Convert.ToDouble(curse);
+                            currency.Sum = Convert.ToInt32(price);
+                            dollar.Add(currency);
+                            break;
+                        case 1:
+                            currency.Course = Convert.ToDouble(curse);
+                            currency.Sum = Convert.ToInt32(price);
+                            euro.Add(currency);
+                            break;
+                        case 2:
+                            currency.Course = Convert.ToDouble(curse);
+                            currency.Sum = Convert.ToInt32(price);
+                            hryvnia.Add(currency);
+                            break;
+                    }
                     break;
-                case 1:
-                    currency.Course = Convert.ToDouble(curse);
-                    currency.Sum = Convert.ToInt32(price);
-                    euro.Add(currency);
-                    break;
-                case 2:
-                    currency.Course = Convert.ToDouble(curse);
-                    currency.Sum = Convert.ToInt32(price);
-                    hryvnia.Add(currency);
+                case "sale":
+                    switch (choiseCurrency)
+                    {
+                        case 0:
+                            currency.Course = Convert.ToDouble(curse);
+                            currency.Sum = Convert.ToInt32(price);
+                            saleDollar.Add(currency);
+                            break;
+                        case 1:
+                            currency.Course = Convert.ToDouble(curse);
+                            currency.Sum = Convert.ToInt32(price);
+                            saleEuro.Add(currency);
+                            break;
+                        case 2:
+                            currency.Course = Convert.ToDouble(curse);
+                            currency.Sum = Convert.ToInt32(price);
+                            saleHryvnia.Add(currency);
+                            break;
+                    }
                     break;
             }
         }
-        public void DeleteData(int index, int choiseCurrency)
+        public void DeleteData(int index, int choiseCurrency, string act)
         {
-            switch (choiseCurrency)
+            switch (act)
             {
-                case 0:
-                    dollar.RemoveAt(index);
+                case "":
+                    switch (choiseCurrency)
+                    {
+                        case 0:
+                            dollar.RemoveAt(index);
+                            break;
+                        case 1:
+                            euro.RemoveAt(index);
+                            break;
+                        case 2:
+                            hryvnia.RemoveAt(index);
+                            break;
+                    }
                     break;
-                case 1:
-                    euro.RemoveAt(index);
-                    break;
-                case 2:
-                    hryvnia.RemoveAt(index);
+                case "sale":
+                    switch (choiseCurrency)
+                    {
+                        case 0:
+                            saleDollar.RemoveAt(index);
+                            break;
+                        case 1:
+                            saleEuro.RemoveAt(index);
+                            break;
+                        case 2:
+                            saleHryvnia.RemoveAt(index);
+                            break;
+                    }
                     break;
             }
         }
