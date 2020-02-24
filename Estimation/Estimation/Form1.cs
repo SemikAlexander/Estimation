@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Estimation.Properties;
+using Microsoft.Office.Interop.Word;
 
 namespace Estimation
 {
@@ -24,12 +25,26 @@ namespace Estimation
         {
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 8)
                 e.Handled = true;
+            if (e.KeyChar == 13)
+            {
+                if (!string.IsNullOrWhiteSpace(SumPrise.Text))
+                {
+                    CoursePrise.Focus();
+                }
+            }
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
                 e.Handled = true;
+            if (e.KeyChar == 13)
+            {
+                if (!string.IsNullOrWhiteSpace(CoursePrise.Text))
+                {
+                    AddBoughtCurrency.Focus();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -219,6 +234,73 @@ namespace Estimation
         {
             Costs costs = new Costs(source);
             costs.Show();
+        }
+
+        private void генерацияОтчётаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (source.dollar.Count != 0 | source.euro.Count != 0 | source.hryvnia.Count != 0)
+            {
+                Microsoft.Office.Interop.Word.Application application = new Microsoft.Office.Interop.Word.Application();
+                Document document = application.Documents.Add(Visible: true);
+                Range range = document.Range();
+                string day = DateTime.Now.Date.Day.ToString();
+                string month = DateTime.Now.Date.Month.ToString().Length == 2 ? DateTime.Now.Date.Month.ToString() : "0" + DateTime.Now.Date.Month.ToString();
+                string year = DateTime.Now.Date.Year.ToString();
+                range.Text = $"{day}.{month}.{year}";
+                range.Font.Name = "Times New Roman";
+                int size1 = source.dollar.Count;
+                int size2 = source.euro.Count;
+                int size3 = source.hryvnia.Count;
+                int maxValue = Math.Max(source.dollar.Count, Math.Max(source.euro.Count, source.hryvnia.Count));
+                Table table = document.Tables.Add(range, maxValue + 1, 6);
+                table.Borders.Enable = 1;
+                foreach (Row row in table.Rows)
+                {
+                    foreach (Cell cell in row.Cells)
+                    {
+                        if(cell.RowIndex == 1)
+                        {
+                            table.Cell(1, 1).Range.Text = "ДОЛЛАР (покупка)";
+                            table.Cell(1, 1).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table.Cell(1, 3).Range.Text = "ЕВРО (покупка)";
+                            table.Cell(1, 3).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table.Cell(1, 5).Range.Text = "ГРИВНА (покупка)";
+                            table.Cell(1, 5).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table.Cell(1, 2).Range.Text = "ДОЛЛАР (продажа)";
+                            table.Cell(1, 2).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table.Cell(1, 4).Range.Text = "ЕВРО (продажа)";
+                            table.Cell(1, 4).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table.Cell(1, 6).Range.Text = "ГРИВНА (продажа)";
+                            table.Cell(1, 6).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        }
+                        else
+                        {
+                            for (int i = 0; i < source.dollar.Count; i++)
+                                table.Cell(2 + i, 1).Range.Text = $"{source.dollar[i].Sum.ToString()}*{source.dollar[i].Course.ToString()} =\n{Convert.ToInt32(source.dollar[i].Sum * source.dollar[i].Course)}";
+                            for (int i = 0; i < source.euro.Count; i++)
+                                table.Cell(2 + i, 3).Range.Text = $"{source.euro[i].Sum.ToString()}*{source.euro[i].Course.ToString()} =\n{Convert.ToInt32(source.euro[i].Sum * source.euro[i].Course)}";
+                            for (int i = 0; i < source.hryvnia.Count; i++)
+                                table.Cell(2 + i, 5).Range.Text = $"{source.hryvnia[i].Sum.ToString()}*{source.hryvnia[i].Course.ToString()} =\n{Convert.ToInt32(source.hryvnia[i].Sum * source.hryvnia[i].Course)}";
+                            for (int i = 0; i < source.saleDollar.Count; i++)
+                                table.Cell(2 + i, 2).Range.Text = $"{source.saleDollar[i].Sum.ToString()}*{source.saleDollar[i].Course.ToString()} =\n{Convert.ToInt32(source.saleDollar[i].Sum * source.saleDollar[i].Course)}";
+                            for (int i = 0; i < source.saleEuro.Count; i++)
+                                table.Cell(2 + i, 4).Range.Text = $"{source.saleEuro[i].Sum.ToString()}*{source.saleEuro[i].Course.ToString()} =\n{Convert.ToInt32(source.saleEuro[i].Sum * source.saleEuro[i].Course)}";
+                            for (int i = 0; i < source.saleHryvnia.Count; i++)
+                                table.Cell(2 + i, 6).Range.Text = $"{source.saleHryvnia[i].Sum.ToString()}*{source.saleHryvnia[i].Course.ToString()} =\n{Convert.ToInt32(source.saleHryvnia[i].Sum * source.saleHryvnia[i].Course)}";
+                        }
+                    }
+                }
+                document.Save();
+                try
+                {
+                    document.Close();
+                    application.Quit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

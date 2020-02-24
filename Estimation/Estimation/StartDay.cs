@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Estimation
@@ -28,17 +21,31 @@ namespace Estimation
         {
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 8)
                 e.Handled = true;
+            if (e.KeyChar == 13)
+            {
+                if (!string.IsNullOrWhiteSpace(SumPrise.Text))
+                {
+                    CoursePrise.Focus();
+                }
+            }
         }
 
         private void CoursePrise_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
                 e.Handled = true;
+            if (e.KeyChar == 13)
+            {
+                if (!string.IsNullOrWhiteSpace(CoursePrise.Text))
+                {
+                    AddBoughtCurrency.Focus();
+                }
+            }
         }
 
         private void ChoiseCurrency_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";
+            toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";
         }
 
         private void AddBoughtCurrency_Click(object sender, EventArgs e)
@@ -62,7 +69,7 @@ namespace Estimation
                 }
                 CoursePrise.Text = SumPrise.Text = "";
                 SumPrise.Focus();
-                this.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";/* ({source.GetStartSum(ChoiseCurrency.SelectedIndex)}руб)*/
+                toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";/* ({source.GetStartSum(ChoiseCurrency.SelectedIndex)}руб)*/
             }
             else
             {

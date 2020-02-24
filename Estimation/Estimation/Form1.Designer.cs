@@ -140,6 +140,7 @@
             this.генерацияОтчётаToolStripMenuItem.Name = "генерацияОтчётаToolStripMenuItem";
             this.генерацияОтчётаToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.генерацияОтчётаToolStripMenuItem.Text = "Генерация отчёта";
+            this.генерацияОтчётаToolStripMenuItem.Click += new System.EventHandler(this.генерацияОтчётаToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -180,7 +181,7 @@
             this.ChoiseCurrency.FormattingEnabled = true;
             this.ChoiseCurrency.Items.AddRange(new object[] {
             "Доллар",
-            "Эвро",
+            "Евро",
             "Гривна"});
             this.ChoiseCurrency.Location = new System.Drawing.Point(12, 47);
             this.ChoiseCurrency.Name = "ChoiseCurrency";

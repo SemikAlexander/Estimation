@@ -82,7 +82,7 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.dollar[i].Sum, source.dollar[i].Course);
                                 res += Convert.ToInt32(source.dollar[i].Sum * source.dollar[i].Course);
                             }
-                            this.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
+                            toolStripLabel1.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 1:
                             res = 0;
@@ -92,7 +92,7 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.euro[i].Sum, source.euro[i].Course);
                                 res += Convert.ToInt32(source.euro[i].Sum * source.euro[i].Course);
                             }
-                            this.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
+                            toolStripLabel1.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 2:
                             res = 0;
@@ -102,7 +102,7 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.hryvnia[i].Sum, source.hryvnia[i].Course);
                                 res += Convert.ToInt32(source.hryvnia[i].Sum * source.hryvnia[i].Course);
                             }
-                            this.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
+                            toolStripLabel1.Text = $"Приход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                     }
                     break;
@@ -117,7 +117,7 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.saleDollar[i].Sum, source.saleDollar[i].Course);
                                 res += Convert.ToInt32(source.saleDollar[i].Sum * source.saleDollar[i].Course);
                             }
-                            this.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
+                            toolStripLabel1.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 1:
                             res = 0;
@@ -127,7 +127,7 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.saleEuro[i].Sum, source.saleEuro[i].Course);
                                 res += Convert.ToInt32(source.saleEuro[i].Sum * source.saleEuro[i].Course);
                             }
-                            this.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
+                            toolStripLabel1.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                         case 2:
                             res = 0;
@@ -137,7 +137,7 @@ namespace Estimation
                                 progressDataGridView.Rows.Add(source.saleHryvnia[i].Sum, source.saleHryvnia[i].Course);
                                 res += Convert.ToInt32(source.saleHryvnia[i].Sum * source.saleHryvnia[i].Course);
                             }
-                            this.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
+                            toolStripLabel1.Text = $"Расход ({ChoiseCurrency.SelectedItem.ToString()} = {res}руб)";
                             break;
                     }
                     break;

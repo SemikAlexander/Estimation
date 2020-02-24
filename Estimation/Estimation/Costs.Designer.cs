@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Costs));
             this.label1 = new System.Windows.Forms.Label();
             this.ChoiseCurrency = new System.Windows.Forms.ComboBox();
@@ -40,7 +40,10 @@
             this.CoursePurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.typeOfOperations = new System.Windows.Forms.ComboBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +62,7 @@
             this.ChoiseCurrency.FormattingEnabled = true;
             this.ChoiseCurrency.Items.AddRange(new object[] {
             "Доллар",
-            "Эвро",
+            "Евро",
             "Гривна"});
             this.ChoiseCurrency.Location = new System.Drawing.Point(15, 77);
             this.ChoiseCurrency.Name = "ChoiseCurrency";
@@ -70,36 +73,36 @@
             // progressDataGridView
             // 
             this.progressDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.progressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.progressDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.progressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.progressDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.progressDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.progressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PurchasedSumDollar,
             this.CoursePurchasedSumDollar});
             this.progressDataGridView.Location = new System.Drawing.Point(158, 12);
             this.progressDataGridView.Name = "progressDataGridView";
-            this.progressDataGridView.Size = new System.Drawing.Size(263, 165);
+            this.progressDataGridView.Size = new System.Drawing.Size(263, 173);
             this.progressDataGridView.TabIndex = 13;
             // 
             // PurchasedSumDollar
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.PurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.PurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle3;
             this.PurchasedSumDollar.HeaderText = "Сумма";
             this.PurchasedSumDollar.Name = "PurchasedSumDollar";
             // 
             // CoursePurchasedSumDollar
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.CoursePurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.CoursePurchasedSumDollar.DefaultCellStyle = dataGridViewCellStyle4;
             this.CoursePurchasedSumDollar.HeaderText = "Курс";
             this.CoursePurchasedSumDollar.Name = "CoursePurchasedSumDollar";
             this.CoursePurchasedSumDollar.Width = 110;
@@ -127,11 +130,28 @@
             this.typeOfOperations.TabIndex = 16;
             this.typeOfOperations.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 188);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(430, 25);
+            this.toolStrip1.TabIndex = 18;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
+            // 
             // Costs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 189);
+            this.ClientSize = new System.Drawing.Size(430, 213);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.typeOfOperations);
             this.Controls.Add(this.label1);
@@ -142,6 +162,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расходы";
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +178,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CoursePurchasedSumDollar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox typeOfOperations;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

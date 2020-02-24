@@ -43,15 +43,18 @@
             this.progressDataGridView = new System.Windows.Forms.DataGridView();
             this.PurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoursePurchasedSumDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddBoughtCurrency
             // 
             this.AddBoughtCurrency.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.AddBoughtCurrency.Location = new System.Drawing.Point(38, 147);
+            this.AddBoughtCurrency.Location = new System.Drawing.Point(28, 147);
             this.AddBoughtCurrency.Name = "AddBoughtCurrency";
-            this.AddBoughtCurrency.Size = new System.Drawing.Size(88, 30);
+            this.AddBoughtCurrency.Size = new System.Drawing.Size(102, 28);
             this.AddBoughtCurrency.TabIndex = 17;
             this.AddBoughtCurrency.Text = "Добавить";
             this.AddBoughtCurrency.UseVisualStyleBackColor = true;
@@ -111,7 +114,7 @@
             this.ChoiseCurrency.FormattingEnabled = true;
             this.ChoiseCurrency.Items.AddRange(new object[] {
             "Доллар",
-            "Эвро",
+            "Евро",
             "Гривна"});
             this.ChoiseCurrency.Location = new System.Drawing.Point(15, 31);
             this.ChoiseCurrency.Name = "ChoiseCurrency";
@@ -138,7 +141,7 @@
             this.CoursePurchasedSumDollar});
             this.progressDataGridView.Location = new System.Drawing.Point(158, 12);
             this.progressDataGridView.Name = "progressDataGridView";
-            this.progressDataGridView.Size = new System.Drawing.Size(263, 165);
+            this.progressDataGridView.Size = new System.Drawing.Size(263, 163);
             this.progressDataGridView.TabIndex = 10;
             this.progressDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressDataGridView_CellContentDoubleClick);
             this.progressDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.progressDataGridView_CellDoubleClick);
@@ -158,11 +161,28 @@
             this.CoursePurchasedSumDollar.Name = "CoursePurchasedSumDollar";
             this.CoursePurchasedSumDollar.Width = 110;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 181);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(430, 25);
+            this.toolStrip1.TabIndex = 19;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
+            // 
             // StartDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 189);
+            this.ClientSize = new System.Drawing.Size(430, 206);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.AddBoughtCurrency);
             this.Controls.Add(this.CoursePrise);
             this.Controls.Add(this.label3);
@@ -177,6 +197,8 @@
             this.Text = "Начало дня";
             this.Load += new System.EventHandler(this.StartDay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +216,7 @@
         private System.Windows.Forms.DataGridView progressDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchasedSumDollar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoursePurchasedSumDollar;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
