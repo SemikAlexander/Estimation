@@ -242,23 +242,25 @@ namespace Estimation
             {
                 Microsoft.Office.Interop.Word.Application application = new Microsoft.Office.Interop.Word.Application();
                 Document document = application.Documents.Add(Visible: true);
-                Range range = document.Range();
-                string day = DateTime.Now.Date.Day.ToString();
+                Object defaultTableBehavior = WdDefaultTableBehavior.wdWord9TableBehavior;
+                Object autoFitBehavior = WdAutoFitBehavior.wdAutoFitWindow;
+                object oMissing = System.Reflection.Missing.Value;
+                document.Paragraphs.Add(ref oMissing);
+                document.Paragraphs.Add(ref oMissing);
+                var wordparagraph = document.Paragraphs[1];
                 string month = DateTime.Now.Date.Month.ToString().Length == 2 ? DateTime.Now.Date.Month.ToString() : "0" + DateTime.Now.Date.Month.ToString();
-                string year = DateTime.Now.Date.Year.ToString();
-                range.Text = $"{day}.{month}.{year}";
-                range.Font.Name = "Times New Roman";
-                int size1 = source.dollar.Count;
-                int size2 = source.euro.Count;
-                int size3 = source.hryvnia.Count;
+                Range rangeForText = document.Range();
+                Range range = wordparagraph.Range;
+                //rangeForText.Text = $"{DateTime.Now.Date.Day.ToString()}.{month}.{DateTime.Now.Date.Year.ToString()}";
+                rangeForText.Font.Name = "Times New Roman";
                 int maxValue = Math.Max(source.dollar.Count, Math.Max(source.euro.Count, source.hryvnia.Count));
-                Table table = document.Tables.Add(range, maxValue + 1, 6);
+                Table table = document.Tables.Add(range, maxValue + 1, 6, ref defaultTableBehavior, ref autoFitBehavior);
                 table.Borders.Enable = 1;
                 foreach (Row row in table.Rows)
                 {
                     foreach (Cell cell in row.Cells)
                     {
-                        if(cell.RowIndex == 1)
+                        if (cell.RowIndex == 1)
                         {
                             table.Cell(1, 1).Range.Text = "ДОЛЛАР (покупка)";
                             table.Cell(1, 1).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
@@ -287,6 +289,77 @@ namespace Estimation
                                 table.Cell(2 + i, 4).Range.Text = $"{source.saleEuro[i].Sum.ToString()}*{source.saleEuro[i].Course.ToString()} =\n{Convert.ToInt32(source.saleEuro[i].Sum * source.saleEuro[i].Course)}";
                             for (int i = 0; i < source.saleHryvnia.Count; i++)
                                 table.Cell(2 + i, 6).Range.Text = $"{source.saleHryvnia[i].Sum.ToString()}*{source.saleHryvnia[i].Course.ToString()} =\n{Convert.ToInt32(source.saleHryvnia[i].Sum * source.saleHryvnia[i].Course)}";
+                        }
+                    }
+                }
+                object unit = WdUnits.wdStory;
+                object extend = WdMovementType.wdMove;
+                application.Selection.EndKey(ref unit, ref extend);
+
+                Range range2 = document.Range();
+                Table table2 = document.Tables.Add(application.Selection.Range, 5, 5, ref defaultTableBehavior, ref autoFitBehavior);
+                table2.Borders.Enable = 1;
+                foreach (Row row in table2.Rows)
+                {
+                    foreach (Cell cell in row.Cells)
+                    {
+                        if (cell.RowIndex == 1)
+                        {
+                            table2.Cell(1, 1).Range.Text = "Начало дня";
+                            table2.Cell(1, 1).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table2.Cell(1, 2).Range.Text = "Приход";
+                            table2.Cell(1, 2).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table2.Cell(1, 3).Range.Text = "Расход";
+                            table2.Cell(1, 3).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            table2.Cell(1, 5).Range.Text = "Конец дня";
+                            table2.Cell(1, 5).VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                        }
+                        else
+                        {
+                            string output = "";
+                            for (int i = 0; i < source.startDollar.Count; i++)
+                                output += $"{source.startDollar[i].Sum.ToString()}*{source.startDollar[i].Course.ToString()} = {Convert.ToInt32(source.startDollar[i].Sum * source.startDollar[i].Course)}\n";
+                            table2.Cell(2, 1).Range.Text = output;
+                            output = "";
+                            for (int i = 0; i < source.startEuro.Count; i++)
+                                output += $"{source.startEuro[i].Sum.ToString()}*{source.startEuro[i].Course.ToString()} = {Convert.ToInt32(source.startEuro[i].Sum * source.startEuro[i].Course)}\n";
+                            table2.Cell(3, 1).Range.Text = output;
+                            output = "";
+                            for (int i = 0; i < source.startHryvnia.Count; i++)
+                                output += $"{source.startHryvnia[i].Sum.ToString()}*{source.hryvnia[i].Course.ToString()} = {Convert.ToInt32(source.startHryvnia[i].Sum * source.startHryvnia[i].Course)}\n";
+                            table2.Cell(4, 1).Range.Text = output;
+                            output = "";
+                            table2.Cell(5, 1).Range.Text = source.startRub.ToString();
+
+                            for (int i = 0; i < source.dollar.Count; i++)
+                                output += $"{source.dollar[i].Sum.ToString()}*{source.dollar[i].Course.ToString()} = {Convert.ToInt32(source.dollar[i].Sum * source.dollar[i].Course)}\n";
+                            table2.Cell(2, 2).Range.Text = output;
+                            output = "";
+                            for (int i = 0; i < source.euro.Count; i++)
+                                output += $"{source.euro[i].Sum.ToString()}*{source.euro[i].Course.ToString()} = {Convert.ToInt32(source.euro[i].Sum * source.euro[i].Course)}\n";
+                            table2.Cell(3, 2).Range.Text = output;
+                            output = "";
+                            for (int i = 0; i < source.hryvnia.Count; i++)
+                                output += $"{source.hryvnia[i].Sum.ToString()}*{source.hryvnia[i].Course.ToString()} = {Convert.ToInt32(source.hryvnia[i].Sum * source.hryvnia[i].Course)}\n";
+                            table2.Cell(4, 2).Range.Text = output;
+                            output = "";
+
+                            for (int i = 0; i < source.saleDollar.Count; i++)
+                                output += $"{source.saleDollar[i].Sum.ToString()}*{source.saleDollar[i].Course.ToString()} = {Convert.ToInt32(source.saleDollar[i].Sum * source.saleDollar[i].Course)}\n";
+                            table2.Cell(2, 3).Range.Text = output;
+                            output = "";
+                            for (int i = 0; i < source.saleEuro.Count; i++)
+                                output += $"{source.saleEuro[i].Sum.ToString()}*{source.saleEuro[i].Course.ToString()} = {Convert.ToInt32(source.saleEuro[i].Sum * source.saleEuro[i].Course)}\n";
+                            table2.Cell(3, 3).Range.Text = output;
+                            output = "";
+                            for (int i = 0; i < source.saleHryvnia.Count; i++)
+                                output += $"{source.saleHryvnia[i].Sum.ToString()}*{source.saleHryvnia[i].Course.ToString()} = {Convert.ToInt32(source.saleHryvnia[i].Sum * source.saleHryvnia[i].Course)}\n";
+                            table2.Cell(4, 3).Range.Text = output;
+                            output = "";
+
+                            table2.Cell(2, 4).Range.Text = source.GetProfitByDollar().ToString();
+                            table2.Cell(3, 4).Range.Text = source.GetProfitByEuro().ToString();
+                            table2.Cell(4, 4).Range.Text = source.GetProfitByHryvna().ToString();
                         }
                     }
                 }

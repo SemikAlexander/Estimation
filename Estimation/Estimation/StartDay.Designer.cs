@@ -115,7 +115,8 @@
             this.ChoiseCurrency.Items.AddRange(new object[] {
             "Доллар",
             "Евро",
-            "Гривна"});
+            "Гривна",
+            "Рубль"});
             this.ChoiseCurrency.Location = new System.Drawing.Point(15, 31);
             this.ChoiseCurrency.Name = "ChoiseCurrency";
             this.ChoiseCurrency.Size = new System.Drawing.Size(137, 24);

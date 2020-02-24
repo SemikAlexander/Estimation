@@ -45,36 +45,52 @@ namespace Estimation
 
         private void ChoiseCurrency_SelectedIndexChanged(object sender, EventArgs e)
         {
-            toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";
+            if (ChoiseCurrency.SelectedIndex != 3)
+            {
+                toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";
+                CoursePrise.Enabled = true;
+            }
+            else
+                CoursePrise.Enabled = false;
         }
 
         private void AddBoughtCurrency_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(CoursePrise.Text) == false & string.IsNullOrWhiteSpace(SumPrise.Text) == false)
+            if (ChoiseCurrency.SelectedIndex != 3)
             {
-                switch (ChoiseCurrency.SelectedIndex)
+                if (string.IsNullOrWhiteSpace(CoursePrise.Text) == false & string.IsNullOrWhiteSpace(SumPrise.Text) == false)
                 {
-                    case 0:
-                        source.AddData(CoursePrise.Text, SumPrise.Text, 0);
-                        FillingTable();
-                        break;
-                    case 1:
-                        source.AddData(CoursePrise.Text, SumPrise.Text, 1);
-                        FillingTable();
-                        break;
-                    case 2:
-                        source.AddData(CoursePrise.Text, SumPrise.Text, 2);
-                        FillingTable();
-                        break;
+                    switch (ChoiseCurrency.SelectedIndex)
+                    {
+                        case 0:
+                            source.AddData(CoursePrise.Text, SumPrise.Text, 0);
+                            FillingTable();
+                            break;
+                        case 1:
+                            source.AddData(CoursePrise.Text, SumPrise.Text, 1);
+                            FillingTable();
+                            break;
+                        case 2:
+                            source.AddData(CoursePrise.Text, SumPrise.Text, 2);
+                            FillingTable();
+                            break;
+                    }
+                    CoursePrise.Text = SumPrise.Text = "";
+                    SumPrise.Focus();
+                    toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";/* ({source.GetStartSum(ChoiseCurrency.SelectedIndex)}руб)*/
                 }
-                CoursePrise.Text = SumPrise.Text = "";
-                SumPrise.Focus();
-                toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.GetStartSumInCurrency(ChoiseCurrency.SelectedIndex)})";/* ({source.GetStartSum(ChoiseCurrency.SelectedIndex)}руб)*/
+                else
+                {
+                    MessageBox.Show("Не все поля заполнены!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Не все поля заполнены!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                source.startRub = Convert.ToInt32(SumPrise.Text);
+                CoursePrise.Text = SumPrise.Text = "";
+                SumPrise.Focus();
+                toolStripLabel1.Text = $"Начало дня ({ChoiseCurrency.SelectedItem.ToString()} = {source.startRub})";
             }
         }
 

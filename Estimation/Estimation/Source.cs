@@ -18,6 +18,7 @@ namespace Estimation
         public List<Currency> startDollar = new List<Currency>();
         public List<Currency> startEuro = new List<Currency>();
         public List<Currency> startHryvnia = new List<Currency>();
+        public int startRub = 0;
 
         public List<Currency> saleDollar = new List<Currency>();
         public List<Currency> saleEuro = new List<Currency>();
@@ -178,6 +179,39 @@ namespace Estimation
                     return res;
             }
             return 0;
+        }
+        public int GetProfitByDollar()
+        {
+            int startUSD = 0, comeUSD = 0, saleUSD = 0;
+            foreach (var start in startDollar)
+                startUSD += start.Sum;
+            foreach (var come in dollar)
+                comeUSD += come.Sum;
+            foreach (var sale in saleDollar)
+                saleUSD += sale.Sum;
+            return (startUSD + comeUSD) - saleUSD;
+        }
+        public int GetProfitByEuro()
+        {
+            int startEUR = 0, comeEUR = 0, saleEUR = 0;
+            foreach (var start in startEuro)
+                startEUR += start.Sum;
+            foreach (var come in euro)
+                comeEUR += come.Sum;
+            foreach (var sale in saleEuro)
+                saleEUR += sale.Sum;
+            return (startEUR + comeEUR) - saleEUR;
+        }
+        public int GetProfitByHryvna()
+        {
+            int startUAH = 0, comeUAH = 0, saleUAH = 0;
+            foreach (var start in startHryvnia)
+                startUAH += start.Sum;
+            foreach (var come in hryvnia)
+                comeUAH += come.Sum;
+            foreach (var sale in saleHryvnia)
+                saleUAH += sale.Sum;
+            return (startUAH + comeUAH) - saleUAH;
         }
     }
 }
