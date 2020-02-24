@@ -360,6 +360,8 @@ namespace Estimation
                             table2.Cell(2, 4).Range.Text = source.GetProfitByDollar().ToString();
                             table2.Cell(3, 4).Range.Text = source.GetProfitByEuro().ToString();
                             table2.Cell(4, 4).Range.Text = source.GetProfitByHryvna().ToString();
+
+                            table2.Cell(5, 3).Range.Text = source.GetSum().ToString();
                         }
                     }
                 }

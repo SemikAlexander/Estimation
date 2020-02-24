@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Estimation.Properties;
 
 namespace Estimation
 {
@@ -212,6 +213,44 @@ namespace Estimation
             foreach (var sale in saleHryvnia)
                 saleUAH += sale.Sum;
             return (startUAH + comeUAH) - saleUAH;
+        }
+        public int GetSum()
+        {
+            double maxUSD = dollar[0].Course, maxEUR = euro[0].Course, maxUAH = hryvnia[0].Course;
+
+            foreach (var USD in dollar)
+                if (USD.Course > maxUSD)
+                    maxUSD = USD.Course;
+            foreach (var EUR in euro)
+                if (EUR.Course > maxEUR)
+                    maxEUR = EUR.Course;
+            foreach (var UAH in hryvnia)
+                if (UAH.Course > maxUAH)
+                    maxUAH = UAH.Course;
+
+            int resUSD = 0, resEUR = 0, resUAH = 0, result = 0;
+            foreach(var USD in saleDollar)
+            {
+                if (USD.Course == Convert.ToDouble(Settings.Default["DollarPurchase"].ToString()))
+                    resUSD += Convert.ToInt32(USD.Sum * (USD.Course - Convert.ToDouble(Settings.Default["DollarPurchase"].ToString())));
+                else
+                    resUSD += Convert.ToInt32(USD.Sum * (USD.Course - maxUSD));
+            }
+            foreach (var EUR in saleEuro)
+            {
+                if (EUR.Course == Convert.ToDouble(Settings.Default["EuroPurchase"].ToString()))
+                    resEUR += Convert.ToInt32(EUR.Sum * (EUR.Course - Convert.ToDouble(Settings.Default["EuroPurchase"].ToString())));
+                else
+                    resEUR += Convert.ToInt32(EUR.Sum * (EUR.Course - maxEUR));
+            }
+            foreach (var UAH in saleHryvnia)
+            {
+                if (UAH.Course == Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
+                    resUAH += Convert.ToInt32(UAH.Sum * (UAH.Course - Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString())));
+                else
+                    resUAH += Convert.ToInt32(UAH.Sum * (UAH.Course - maxUAH));
+            }
+            return resUSD + resEUR + resUAH;
         }
     }
 }
