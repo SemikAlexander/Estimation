@@ -1,6 +1,6 @@
 ﻿namespace Estimation
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.покупкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.продажаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.курсыВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.началоДняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расходыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.генерацияОтчётаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +49,10 @@
             this.CoursePrise = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AddBoughtCurrency = new System.Windows.Forms.Button();
+            this.настройкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.началоДняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.курсыВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.скрытьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -95,29 +96,6 @@
             this.продажаToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.продажаToolStripMenuItem.Text = "Продажа";
             this.продажаToolStripMenuItem.Click += new System.EventHandler(this.продажаToolStripMenuItem_Click);
-            // 
-            // настройкаToolStripMenuItem
-            // 
-            this.настройкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.курсыВалютToolStripMenuItem,
-            this.началоДняToolStripMenuItem});
-            this.настройкаToolStripMenuItem.Name = "настройкаToolStripMenuItem";
-            this.настройкаToolStripMenuItem.Size = new System.Drawing.Size(86, 21);
-            this.настройкаToolStripMenuItem.Text = "Настройка";
-            // 
-            // курсыВалютToolStripMenuItem
-            // 
-            this.курсыВалютToolStripMenuItem.Name = "курсыВалютToolStripMenuItem";
-            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.курсыВалютToolStripMenuItem.Text = "Курсы валют";
-            this.курсыВалютToolStripMenuItem.Click += new System.EventHandler(this.курсыВалютToolStripMenuItem_Click);
-            // 
-            // началоДняToolStripMenuItem
-            // 
-            this.началоДняToolStripMenuItem.Name = "началоДняToolStripMenuItem";
-            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.началоДняToolStripMenuItem.Text = "Начало дня";
-            this.началоДняToolStripMenuItem.Click += new System.EventHandler(this.началоДняToolStripMenuItem_Click);
             // 
             // отчётToolStripMenuItem
             // 
@@ -242,7 +220,38 @@
             this.AddBoughtCurrency.UseVisualStyleBackColor = true;
             this.AddBoughtCurrency.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // настройкаToolStripMenuItem
+            // 
+            this.настройкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.курсыВалютToolStripMenuItem,
+            this.началоДняToolStripMenuItem,
+            this.скрытьТаблицуToolStripMenuItem});
+            this.настройкаToolStripMenuItem.Name = "настройкаToolStripMenuItem";
+            this.настройкаToolStripMenuItem.Size = new System.Drawing.Size(86, 21);
+            this.настройкаToolStripMenuItem.Text = "Настройка";
+            // 
+            // началоДняToolStripMenuItem
+            // 
+            this.началоДняToolStripMenuItem.Name = "началоДняToolStripMenuItem";
+            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.началоДняToolStripMenuItem.Text = "Начало дня";
+            this.началоДняToolStripMenuItem.Click += new System.EventHandler(this.началоДняToolStripMenuItem_Click);
+            // 
+            // курсыВалютToolStripMenuItem
+            // 
+            this.курсыВалютToolStripMenuItem.Name = "курсыВалютToolStripMenuItem";
+            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.курсыВалютToolStripMenuItem.Text = "Курсы валют";
+            this.курсыВалютToolStripMenuItem.Click += new System.EventHandler(this.курсыВалютToolStripMenuItem_Click);
+            // 
+            // скрытьТаблицуToolStripMenuItem
+            // 
+            this.скрытьТаблицуToolStripMenuItem.Name = "скрытьТаблицуToolStripMenuItem";
+            this.скрытьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.скрытьТаблицуToolStripMenuItem.Text = "Скрыть таблицу";
+            this.скрытьТаблицуToolStripMenuItem.Click += new System.EventHandler(this.скрытьТаблицуToolStripMenuItem_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,7 +269,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -275,8 +284,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem настройкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem курсыВалютToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.DataGridView progressDataGridView;
@@ -289,12 +296,15 @@
         private System.Windows.Forms.Button AddBoughtCurrency;
         private System.Windows.Forms.ToolStripMenuItem расходыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem генерацияОтчётаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem началоДняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem действиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem покупкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem продажаToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchasedSumDollar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoursePurchasedSumDollar;
+        private System.Windows.Forms.ToolStripMenuItem настройкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem курсыВалютToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem началоДняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem скрытьТаблицуToolStripMenuItem;
     }
 }
 

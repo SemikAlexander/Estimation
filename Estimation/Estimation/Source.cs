@@ -216,7 +216,9 @@ namespace Estimation
         }
         public int GetSum()
         {
-            double maxUSD = dollar[0].Course, maxEUR = euro[0].Course, maxUAH = hryvnia[0].Course;
+            double maxUSD = dollar.Count != 0 ? dollar[0].Course : -1,
+                maxEUR = euro.Count != 0 ? euro[0].Course : -1,
+                maxUAH = hryvnia.Count != 0 ? hryvnia[0].Course : -1;
 
             foreach (var USD in dollar)
                 if (USD.Course > maxUSD)

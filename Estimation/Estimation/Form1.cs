@@ -12,11 +12,11 @@ using Microsoft.Office.Interop.Word;
 
 namespace Estimation
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         Source source = new Source();
         string act = "";
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -121,37 +121,37 @@ namespace Estimation
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.dollar.Count; i++)
                                 progressDataGridView.Rows.Add(source.dollar[i].Sum, source.dollar[i].Course);
-                            foreach (DataGridViewRow row in progressDataGridView.Rows)
-                            {
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["DollarPurchase"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["DollarPurchase"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Red;
-                            }
+                            //foreach (DataGridViewRow row in progressDataGridView.Rows)
+                            //{
+                            //    if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["DollarPurchase"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Green;
+                            //    if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["DollarPurchase"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Red;
+                            //}
                             break;
                         case 1:
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.euro.Count; i++)
                                 progressDataGridView.Rows.Add(source.euro[i].Sum, source.euro[i].Course);
-                            foreach(DataGridViewRow row in progressDataGridView.Rows)
-                            {
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["EuroPurchase"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["EuroPurchase"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Red;
-                            }
+                            //foreach(DataGridViewRow row in progressDataGridView.Rows)
+                            //{
+                            //    if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["EuroPurchase"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Green;
+                            //    if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["EuroPurchase"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Red;
+                            //}
                             break;
                         case 2:
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.hryvnia.Count; i++)
                                 progressDataGridView.Rows.Add(source.hryvnia[i].Sum, source.hryvnia[i].Course);
-                            foreach (DataGridViewRow row in progressDataGridView.Rows)
-                            {
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Red;
-                            }
+                            //foreach (DataGridViewRow row in progressDataGridView.Rows)
+                            //{
+                            //    if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Green;
+                            //    if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["HryvnaPurchase"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Red;
+                            //}
                             break;
                     }
                     break;
@@ -162,37 +162,37 @@ namespace Estimation
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.saleDollar.Count; i++)
                                 progressDataGridView.Rows.Add(source.saleDollar[i].Sum, source.saleDollar[i].Course);
-                            foreach (DataGridViewRow row in progressDataGridView.Rows)
-                            {
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["DollarSale"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["DollarSale"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Red;
-                            }
+                            //foreach (DataGridViewRow row in progressDataGridView.Rows)
+                            //{
+                            //    if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["DollarSale"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Green;
+                            //    if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["DollarSale"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Red;
+                            //}
                             break;
                         case 1:
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.saleEuro.Count; i++)
                                 progressDataGridView.Rows.Add(source.saleEuro[i].Sum, source.saleEuro[i].Course);
-                            foreach (DataGridViewRow row in progressDataGridView.Rows)
-                            {
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["EuroSale"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["EuroSale"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Red;
-                            }
+                            //foreach (DataGridViewRow row in progressDataGridView.Rows)
+                            //{
+                            //    if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["EuroSale"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Green;
+                            //    if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["EuroSale"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Red;
+                            //}
                             break;
                         case 2:
                             progressDataGridView.Rows.Clear();
                             for (int i = 0; i < source.saleHryvnia.Count; i++)
                                 progressDataGridView.Rows.Add(source.saleHryvnia[i].Sum, source.saleHryvnia[i].Course);
-                            foreach (DataGridViewRow row in progressDataGridView.Rows)
-                            {
-                                if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["HryvnaSale"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Green;
-                                if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["HryvnaSale"].ToString()))
-                                    row.DefaultCellStyle.ForeColor = Color.Red;
-                            }
+                            //foreach (DataGridViewRow row in progressDataGridView.Rows)
+                            //{
+                            //    if (Convert.ToDouble(row.Cells[1].Value) > Convert.ToDouble(Settings.Default["HryvnaSale"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Green;
+                            //    if (Convert.ToDouble(row.Cells[1].Value) < Convert.ToDouble(Settings.Default["HryvnaSale"].ToString()))
+                            //        row.DefaultCellStyle.ForeColor = Color.Red;
+                            //}
                             break;
                     }
                     break;
@@ -205,7 +205,7 @@ namespace Estimation
             продажаToolStripMenuItem.Checked = false;
             progressDataGridView.Rows.Clear();
             act = "purchase";
-            this.Text = "Главная (покупка)";
+            Text = "Главная (покупка)";
         }
 
         private void продажаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -222,6 +222,10 @@ namespace Estimation
             покупкаToolStripMenuItem.Checked = true;
             продажаToolStripMenuItem.Checked = false;
             act = "purchase";
+            Left = 0;
+            Top = 0;
+            TableForm tableForm = new TableForm();
+            tableForm.Show();
         }
 
         private void началоДняToolStripMenuItem_Click(object sender, EventArgs e)
@@ -240,6 +244,7 @@ namespace Estimation
         {
             if (source.dollar.Count != 0 | source.euro.Count != 0 | source.hryvnia.Count != 0)
             {
+                Text = "Главная (генерация отчёта...)";
                 Microsoft.Office.Interop.Word.Application application = new Microsoft.Office.Interop.Word.Application();
                 Document document = application.Documents.Add(Visible: true);
                 Object defaultTableBehavior = WdDefaultTableBehavior.wdWord9TableBehavior;
@@ -326,7 +331,7 @@ namespace Estimation
                             table2.Cell(3, 1).Range.Text = output;
                             output = "";
                             for (int i = 0; i < source.startHryvnia.Count; i++)
-                                output += $"{source.startHryvnia[i].Sum.ToString()}*{source.hryvnia[i].Course.ToString()} = {Convert.ToInt32(source.startHryvnia[i].Sum * source.startHryvnia[i].Course)}\n";
+                                output += $"{source.startHryvnia[i].Sum.ToString()}*{source.startHryvnia[i].Course.ToString()} = {Convert.ToInt32(source.startHryvnia[i].Sum * source.startHryvnia[i].Course)}\n";
                             table2.Cell(4, 1).Range.Text = output;
                             output = "";
                             table2.Cell(5, 1).Range.Text = source.startRub.ToString();
@@ -365,17 +370,24 @@ namespace Estimation
                         }
                     }
                 }
-                document.Save();
                 try
                 {
+                    document.Save();
                     document.Close();
                     application.Quit();
+                    Text = "Главная";
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Text = "Главная";
                 }
             }
+        }
+
+        private void скрытьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
