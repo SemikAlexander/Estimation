@@ -74,12 +74,6 @@
     <Compile Include="StartDay.Designer.cs">
       <DependentUpon>StartDay.cs</DependentUpon>
     </Compile>
-    <Compile Include="TableForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TableForm.Designer.cs">
-      <DependentUpon>TableForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Costs.resx">
       <DependentUpon>Costs.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,9 +95,6 @@
     </Compile>
     <EmbeddedResource Include="StartDay.resx">
       <DependentUpon>StartDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TableForm.resx">
-      <DependentUpon>TableForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

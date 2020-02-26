@@ -94,51 +94,65 @@ namespace Estimation
         }
         public void DeleteData(int index, int choiseCurrency, string act)
         {
-            switch (act)
+            try
             {
-                case "purchase":
-                    switch (choiseCurrency)
-                    {
-                        case 0:
-                            dollar.RemoveAt(index);
-                            break;
-                        case 1:
-                            euro.RemoveAt(index);
-                            break;
-                        case 2:
-                            hryvnia.RemoveAt(index);
-                            break;
-                    }
-                    break;
-                case "sale":
-                    switch (choiseCurrency)
-                    {
-                        case 0:
-                            saleDollar.RemoveAt(index);
-                            break;
-                        case 1:
-                            saleEuro.RemoveAt(index);
-                            break;
-                        case 2:
-                            saleHryvnia.RemoveAt(index);
-                            break;
-                    }
-                    break;
+                switch (act)
+                {
+                    case "purchase":
+                        switch (choiseCurrency)
+                        {
+                            case 0:
+                                dollar.RemoveAt(index);
+                                break;
+                            case 1:
+                                euro.RemoveAt(index);
+                                break;
+                            case 2:
+                                hryvnia.RemoveAt(index);
+                                break;
+                        }
+                        break;
+                    case "sale":
+                        switch (choiseCurrency)
+                        {
+                            case 0:
+                                saleDollar.RemoveAt(index);
+                                break;
+                            case 1:
+                                saleEuro.RemoveAt(index);
+                                break;
+                            case 2:
+                                saleHryvnia.RemoveAt(index);
+                                break;
+                        }
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+
             }
         }
         public void DeleteData(int index, int choiseCurrency)
         {
-            switch (choiseCurrency)
+            try
             {
-                case 0:
-                    startDollar.RemoveAt(index);
-                    break;
-                case 1:
-                    startEuro.RemoveAt(index);
-                    break;
-                case 2:
-                    startHryvnia.RemoveAt(index);
-                    break;
+                switch (choiseCurrency)
+                {
+                    case 0:
+                        startDollar.RemoveAt(index);
+                        break;
+                    case 1:
+                        startEuro.RemoveAt(index);
+                        break;
+                    case 2:
+                        startHryvnia.RemoveAt(index);
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
         public int GetStartSum(int choiseCurrency)
