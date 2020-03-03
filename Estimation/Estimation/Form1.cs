@@ -354,7 +354,8 @@ namespace Estimation
 
         private void расходыToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            ExpensesForm expensesForm = new ExpensesForm(source);
+            expensesForm.Show();
         }
     }
 }

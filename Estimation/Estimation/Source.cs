@@ -11,6 +11,15 @@ namespace Estimation
             public int Sum;
             public double Course;
         }
+        public struct Expenses
+        {
+            public int Sum;
+            public string Description;
+        }
+
+        public Expenses expenses;
+        public List<Expenses> expense = new List<Expenses>();
+
         public Currency currency;
         public List<Currency> dollar = new List<Currency>();
         public List<Currency> euro = new List<Currency>();
@@ -19,7 +28,7 @@ namespace Estimation
         public List<Currency> startDollar = new List<Currency>();
         public List<Currency> startEuro = new List<Currency>();
         public List<Currency> startHryvnia = new List<Currency>();
-        public int startRub = 0;
+        public int startRub = 0, allExpenses = 0;
 
         public List<Currency> saleDollar = new List<Currency>();
         public List<Currency> saleEuro = new List<Currency>();
