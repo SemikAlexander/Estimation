@@ -23,6 +23,9 @@ namespace Estimation
         {
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 8)
                 e.Handled = true;
+            if (e.KeyChar == 13)
+                if (!string.IsNullOrWhiteSpace(SumPrise.Text))
+                    expensesDescription.Focus();
         }
 
         private void AddBoughtCurrency_Click(object sender, EventArgs e)
@@ -34,6 +37,8 @@ namespace Estimation
 
                 expensesDataGridView.Rows.Add(SumPrise.Text, expensesDescription.Text);
                 source.allExpenses += Convert.ToInt32(SumPrise.Text);
+
+                SumPrise.Text = expensesDescription.Text = "";
             }
         }
 
@@ -53,6 +58,13 @@ namespace Estimation
             expensesDataGridView.Rows.Clear();
             for (int i = 0; i < source.expense.Count; i++)
                 expensesDataGridView.Rows.Add(source.expense[i].Sum, source.expense[i].Description);
+        }
+
+        private void expensesDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                if (!string.IsNullOrWhiteSpace(expensesDescription.Text))
+                    AddExpenses.Focus();
         }
     }
 }

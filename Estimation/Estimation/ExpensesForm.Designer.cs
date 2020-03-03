@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.expensesDataGridView = new System.Windows.Forms.DataGridView();
             this.SumOfExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionOfExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddBoughtCurrency = new System.Windows.Forms.Button();
+            this.AddExpenses = new System.Windows.Forms.Button();
             this.expensesDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SumPrise = new System.Windows.Forms.TextBox();
@@ -46,16 +46,16 @@
             // expensesDataGridView
             // 
             this.expensesDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.expensesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.expensesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.expensesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.expensesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.expensesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.expensesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SumOfExpense,
@@ -68,29 +68,29 @@
             // 
             // SumOfExpense
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.SumOfExpense.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.SumOfExpense.DefaultCellStyle = dataGridViewCellStyle7;
             this.SumOfExpense.HeaderText = "Сумма";
             this.SumOfExpense.Name = "SumOfExpense";
             // 
             // DescriptionOfExpense
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.DescriptionOfExpense.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.DescriptionOfExpense.DefaultCellStyle = dataGridViewCellStyle8;
             this.DescriptionOfExpense.HeaderText = "Описание";
             this.DescriptionOfExpense.Name = "DescriptionOfExpense";
             this.DescriptionOfExpense.Width = 200;
             // 
-            // AddBoughtCurrency
+            // AddExpenses
             // 
-            this.AddBoughtCurrency.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.AddBoughtCurrency.Location = new System.Drawing.Point(25, 147);
-            this.AddBoughtCurrency.Name = "AddBoughtCurrency";
-            this.AddBoughtCurrency.Size = new System.Drawing.Size(108, 31);
-            this.AddBoughtCurrency.TabIndex = 22;
-            this.AddBoughtCurrency.Text = "Добавить";
-            this.AddBoughtCurrency.UseVisualStyleBackColor = true;
-            this.AddBoughtCurrency.Click += new System.EventHandler(this.AddBoughtCurrency_Click);
+            this.AddExpenses.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.AddExpenses.Location = new System.Drawing.Point(25, 147);
+            this.AddExpenses.Name = "AddExpenses";
+            this.AddExpenses.Size = new System.Drawing.Size(108, 31);
+            this.AddExpenses.TabIndex = 22;
+            this.AddExpenses.Text = "Добавить";
+            this.AddExpenses.UseVisualStyleBackColor = true;
+            this.AddExpenses.Click += new System.EventHandler(this.AddBoughtCurrency_Click);
             // 
             // expensesDescription
             // 
@@ -100,6 +100,7 @@
             this.expensesDescription.Name = "expensesDescription";
             this.expensesDescription.Size = new System.Drawing.Size(134, 70);
             this.expensesDescription.TabIndex = 21;
+            this.expensesDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.expensesDescription_KeyPress);
             // 
             // label3
             // 
@@ -135,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 190);
-            this.Controls.Add(this.AddBoughtCurrency);
+            this.Controls.Add(this.AddExpenses);
             this.Controls.Add(this.expensesDescription);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SumPrise);
@@ -155,7 +156,7 @@
         private System.Windows.Forms.DataGridView expensesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn SumOfExpense;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionOfExpense;
-        private System.Windows.Forms.Button AddBoughtCurrency;
+        private System.Windows.Forms.Button AddExpenses;
         private System.Windows.Forms.TextBox expensesDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox SumPrise;
