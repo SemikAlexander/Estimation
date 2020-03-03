@@ -268,5 +268,26 @@ namespace Estimation
             }
             return resUSD + resEUR + resUAH;
         }
+        public int GetGeneralProfit()
+        {
+            int startSum = startRub, expenseAmount = 0, amountReceived = 0;
+            #region get sum in rub per day
+            foreach (var ss in dollar)
+                amountReceived += Convert.ToInt32(ss.Sum * ss.Course);
+            foreach (var ss in euro)
+                amountReceived += Convert.ToInt32(ss.Sum * ss.Course);
+            foreach (var ss in hryvnia)
+                amountReceived += Convert.ToInt32(ss.Sum * ss.Course);
+            #endregion
+            #region get sum in rub per day by sale
+            foreach (var ss in saleDollar)
+                expenseAmount += Convert.ToInt32(ss.Sum * ss.Course);
+            foreach (var ss in saleEuro)
+                expenseAmount += Convert.ToInt32(ss.Sum * ss.Course);
+            foreach (var ss in saleHryvnia)
+                expenseAmount += Convert.ToInt32(ss.Sum * ss.Course);
+            #endregion
+            return startSum - amountReceived + expenseAmount;
+        }
     }
 }

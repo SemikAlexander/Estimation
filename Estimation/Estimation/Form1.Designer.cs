@@ -43,7 +43,6 @@
             this.настройкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.курсыВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.началоДняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.скрытьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расходыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.генерацияОтчётаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +61,7 @@
             this.euroSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hryvnaBought = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hryvnaSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.расходыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OperationDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.действиеToolStripMenuItem,
+            this.расходыToolStripMenuItem1,
             this.настройкаToolStripMenuItem,
             this.отчётToolStripMenuItem,
             this.справкаToolStripMenuItem});
@@ -110,8 +111,7 @@
             // 
             this.настройкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.курсыВалютToolStripMenuItem,
-            this.началоДняToolStripMenuItem,
-            this.скрытьТаблицуToolStripMenuItem});
+            this.началоДняToolStripMenuItem});
             this.настройкаToolStripMenuItem.Name = "настройкаToolStripMenuItem";
             this.настройкаToolStripMenuItem.Size = new System.Drawing.Size(93, 21);
             this.настройкаToolStripMenuItem.Text = "Настройка";
@@ -119,22 +119,16 @@
             // курсыВалютToolStripMenuItem
             // 
             this.курсыВалютToolStripMenuItem.Name = "курсыВалютToolStripMenuItem";
-            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.курсыВалютToolStripMenuItem.Text = "Курсы валют";
             this.курсыВалютToolStripMenuItem.Click += new System.EventHandler(this.курсыВалютToolStripMenuItem_Click);
             // 
             // началоДняToolStripMenuItem
             // 
             this.началоДняToolStripMenuItem.Name = "началоДняToolStripMenuItem";
-            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.началоДняToolStripMenuItem.Text = "Начало дня";
             this.началоДняToolStripMenuItem.Click += new System.EventHandler(this.началоДняToolStripMenuItem_Click);
-            // 
-            // скрытьТаблицуToolStripMenuItem
-            // 
-            this.скрытьТаблицуToolStripMenuItem.Name = "скрытьТаблицуToolStripMenuItem";
-            this.скрытьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.скрытьТаблицуToolStripMenuItem.Text = "Скрыть таблицу";
             // 
             // отчётToolStripMenuItem
             // 
@@ -255,7 +249,7 @@
             this.OperationDataGridView.ReadOnly = true;
             this.OperationDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.OperationDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.OperationDataGridView.Size = new System.Drawing.Size(772, 246);
+            this.OperationDataGridView.Size = new System.Drawing.Size(772, 251);
             this.OperationDataGridView.TabIndex = 10;
             this.OperationDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OperationDataGridView_CellDoubleClick);
             // 
@@ -313,11 +307,18 @@
             this.hryvnaSale.ReadOnly = true;
             this.hryvnaSale.Width = 120;
             // 
+            // расходыToolStripMenuItem1
+            // 
+            this.расходыToolStripMenuItem1.Name = "расходыToolStripMenuItem1";
+            this.расходыToolStripMenuItem1.Size = new System.Drawing.Size(77, 21);
+            this.расходыToolStripMenuItem1.Text = "Расходы";
+            this.расходыToolStripMenuItem1.Click += new System.EventHandler(this.расходыToolStripMenuItem1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 288);
+            this.ClientSize = new System.Drawing.Size(962, 293);
             this.Controls.Add(this.OperationDataGridView);
             this.Controls.Add(this.AddBoughtCurrency);
             this.Controls.Add(this.CoursePrise);
@@ -363,7 +364,6 @@
         private System.Windows.Forms.ToolStripMenuItem настройкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem курсыВалютToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem началоДняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem скрытьТаблицуToolStripMenuItem;
         public System.Windows.Forms.DataGridView OperationDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dollarBought;
         private System.Windows.Forms.DataGridViewTextBoxColumn dollarSale;
@@ -371,6 +371,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn euroSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn hryvnaBought;
         private System.Windows.Forms.DataGridViewTextBoxColumn hryvnaSale;
+        private System.Windows.Forms.ToolStripMenuItem расходыToolStripMenuItem1;
     }
 }
 

@@ -112,9 +112,12 @@ namespace Estimation
 
         public void FillingTable()
         {
-            int maxValue = Math.Max(source.dollar.Count, Math.Max(source.euro.Count, source.hryvnia.Count));
+            int maxValueByBought = Math.Max(source.dollar.Count, Math.Max(source.euro.Count, source.hryvnia.Count)),
+                maxValueBySale = Math.Max(source.saleDollar.Count, Math.Max(source.saleEuro.Count, source.saleHryvnia.Count)),
+                maxValue = Math.Max(maxValueByBought, maxValueBySale);
+
             OperationDataGridView.Rows.Clear();
-            for (int i = 0; i < maxValue + 1; i++)
+            for (int i = 0; i < maxValue; i++)
                 OperationDataGridView.Rows.Add();
 
             for (int i = 0; i < source.dollar.Count; i++)
@@ -130,6 +133,7 @@ namespace Estimation
             for (int i = 0; i < source.saleHryvnia.Count; i++)
                 OperationDataGridView.Rows[i].Cells[5].Value = $"{source.saleHryvnia[i].Sum}*{source.saleHryvnia[i].Course}";
         }
+
         public int GetFirstFreeRow(int Currency, string Operation)
         {
             int Column = 0;
@@ -316,6 +320,7 @@ namespace Estimation
                             table2.Cell(4, 4).Range.Text = source.GetProfitByHryvna().ToString();
 
                             table2.Cell(5, 3).Range.Text = source.GetSum().ToString();
+                            table2.Cell(5, 5).Range.Text = source.GetGeneralProfit().ToString();
                         }
                     }
                 }
@@ -345,6 +350,11 @@ namespace Estimation
                 source.DeleteData(e.RowIndex, 2, actToDelete);
 
             FillingTable();
+        }
+
+        private void расходыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
