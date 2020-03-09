@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpensesForm));
             this.expensesDataGridView = new System.Windows.Forms.DataGridView();
             this.SumOfExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionOfExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,37 +46,30 @@
             // expensesDataGridView
             // 
             this.expensesDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.expensesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.expensesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.expensesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.expensesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.expensesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SumOfExpense,
             this.DescriptionOfExpense});
-            this.expensesDataGridView.Location = new System.Drawing.Point(152, 12);
+            this.expensesDataGridView.Location = new System.Drawing.Point(203, 13);
+            this.expensesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.expensesDataGridView.Name = "expensesDataGridView";
-            this.expensesDataGridView.Size = new System.Drawing.Size(358, 166);
+            this.expensesDataGridView.Size = new System.Drawing.Size(359, 220);
             this.expensesDataGridView.TabIndex = 11;
             this.expensesDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expensesDataGridView_CellContentDoubleClick);
             // 
             // SumOfExpense
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.SumOfExpense.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.SumOfExpense.DefaultCellStyle = dataGridViewCellStyle2;
             this.SumOfExpense.HeaderText = "Сумма";
             this.SumOfExpense.Name = "SumOfExpense";
             // 
             // DescriptionOfExpense
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.DescriptionOfExpense.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.DescriptionOfExpense.DefaultCellStyle = dataGridViewCellStyle3;
             this.DescriptionOfExpense.HeaderText = "Описание";
             this.DescriptionOfExpense.Name = "DescriptionOfExpense";
             this.DescriptionOfExpense.Width = 200;
@@ -84,9 +77,10 @@
             // AddExpenses
             // 
             this.AddExpenses.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.AddExpenses.Location = new System.Drawing.Point(25, 147);
+            this.AddExpenses.Location = new System.Drawing.Point(34, 182);
+            this.AddExpenses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddExpenses.Name = "AddExpenses";
-            this.AddExpenses.Size = new System.Drawing.Size(108, 31);
+            this.AddExpenses.Size = new System.Drawing.Size(144, 41);
             this.AddExpenses.TabIndex = 22;
             this.AddExpenses.Text = "Добавить";
             this.AddExpenses.UseVisualStyleBackColor = true;
@@ -95,56 +89,64 @@
             // expensesDescription
             // 
             this.expensesDescription.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.expensesDescription.Location = new System.Drawing.Point(12, 71);
+            this.expensesDescription.Location = new System.Drawing.Point(16, 84);
+            this.expensesDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.expensesDescription.Multiline = true;
             this.expensesDescription.Name = "expensesDescription";
-            this.expensesDescription.Size = new System.Drawing.Size(134, 70);
+            this.expensesDescription.Size = new System.Drawing.Size(177, 90);
             this.expensesDescription.TabIndex = 21;
             this.expensesDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.expensesDescription_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.label3.Location = new System.Drawing.Point(12, 52);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label3.Location = new System.Drawing.Point(13, 61);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.Size = new System.Drawing.Size(83, 19);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Курс";
+            this.label3.Text = "Описание";
             // 
             // SumPrise
             // 
             this.SumPrise.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.SumPrise.Location = new System.Drawing.Point(12, 28);
+            this.SumPrise.Location = new System.Drawing.Point(16, 36);
+            this.SumPrise.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SumPrise.Name = "SumPrise";
-            this.SumPrise.Size = new System.Drawing.Size(134, 21);
+            this.SumPrise.Size = new System.Drawing.Size(177, 21);
             this.SumPrise.TabIndex = 19;
             this.SumPrise.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SumPrise_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label2.Location = new System.Drawing.Point(13, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 18;
             this.label2.Text = "Сумма";
             // 
             // ExpensesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 190);
+            this.ClientSize = new System.Drawing.Size(575, 248);
             this.Controls.Add(this.AddExpenses);
             this.Controls.Add(this.expensesDescription);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SumPrise);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.expensesDataGridView);
+            this.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExpensesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расходы";
+            this.Load += new System.EventHandler(this.ExpensesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.expensesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

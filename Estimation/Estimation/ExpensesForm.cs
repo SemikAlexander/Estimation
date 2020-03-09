@@ -66,5 +66,10 @@ namespace Estimation
                 if (!string.IsNullOrWhiteSpace(expensesDescription.Text))
                     AddExpenses.Focus();
         }
+
+        private void ExpensesForm_Load(object sender, EventArgs e)
+        {
+            FillingTable();
+        }
     }
 }
