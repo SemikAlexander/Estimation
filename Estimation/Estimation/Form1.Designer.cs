@@ -40,6 +40,7 @@
             this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.покупкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.продажаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.расходыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.курсыВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.началоДняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,6 @@
             this.euroSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hryvnaBought = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hryvnaSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.расходыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OperationDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             this.покупкаToolStripMenuItem.CheckOnClick = true;
             this.покупкаToolStripMenuItem.Name = "покупкаToolStripMenuItem";
-            this.покупкаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.покупкаToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.покупкаToolStripMenuItem.Text = "Покупка";
             this.покупкаToolStripMenuItem.Click += new System.EventHandler(this.покупкаToolStripMenuItem_Click);
             // 
@@ -103,9 +103,16 @@
             // 
             this.продажаToolStripMenuItem.CheckOnClick = true;
             this.продажаToolStripMenuItem.Name = "продажаToolStripMenuItem";
-            this.продажаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.продажаToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.продажаToolStripMenuItem.Text = "Продажа";
             this.продажаToolStripMenuItem.Click += new System.EventHandler(this.продажаToolStripMenuItem_Click);
+            // 
+            // расходыToolStripMenuItem1
+            // 
+            this.расходыToolStripMenuItem1.Name = "расходыToolStripMenuItem1";
+            this.расходыToolStripMenuItem1.Size = new System.Drawing.Size(77, 21);
+            this.расходыToolStripMenuItem1.Text = "Расходы";
+            this.расходыToolStripMenuItem1.Click += new System.EventHandler(this.расходыToolStripMenuItem1_Click);
             // 
             // настройкаToolStripMenuItem
             // 
@@ -119,14 +126,14 @@
             // курсыВалютToolStripMenuItem
             // 
             this.курсыВалютToolStripMenuItem.Name = "курсыВалютToolStripMenuItem";
-            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.курсыВалютToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.курсыВалютToolStripMenuItem.Text = "Курсы валют";
             this.курсыВалютToolStripMenuItem.Click += new System.EventHandler(this.курсыВалютToolStripMenuItem_Click);
             // 
             // началоДняToolStripMenuItem
             // 
             this.началоДняToolStripMenuItem.Name = "началоДняToolStripMenuItem";
-            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.началоДняToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.началоДняToolStripMenuItem.Text = "Начало дня";
             this.началоДняToolStripMenuItem.Click += new System.EventHandler(this.началоДняToolStripMenuItem_Click);
             // 
@@ -158,6 +165,7 @@
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
             this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // ChoiseCurrency
             // 
@@ -307,13 +315,6 @@
             this.hryvnaSale.ReadOnly = true;
             this.hryvnaSale.Width = 120;
             // 
-            // расходыToolStripMenuItem1
-            // 
-            this.расходыToolStripMenuItem1.Name = "расходыToolStripMenuItem1";
-            this.расходыToolStripMenuItem1.Size = new System.Drawing.Size(77, 21);
-            this.расходыToolStripMenuItem1.Text = "Расходы";
-            this.расходыToolStripMenuItem1.Click += new System.EventHandler(this.расходыToolStripMenuItem1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -332,6 +333,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(978, 332);
+            this.MinimumSize = new System.Drawing.Size(978, 332);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная";

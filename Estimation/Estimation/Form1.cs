@@ -357,5 +357,11 @@ namespace Estimation
             ExpensesForm expensesForm = new ExpensesForm(source);
             expensesForm.Show();
         }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.Show();
+        }
     }
 }

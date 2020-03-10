@@ -52,7 +52,7 @@
             // 
             this.AddBoughtCurrency.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBoughtCurrency.Location = new System.Drawing.Point(35, 163);
-            this.AddBoughtCurrency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddBoughtCurrency.Margin = new System.Windows.Forms.Padding(4);
             this.AddBoughtCurrency.Name = "AddBoughtCurrency";
             this.AddBoughtCurrency.Size = new System.Drawing.Size(136, 37);
             this.AddBoughtCurrency.TabIndex = 17;
@@ -64,7 +64,7 @@
             // 
             this.CoursePrise.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CoursePrise.Location = new System.Drawing.Point(16, 132);
-            this.CoursePrise.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CoursePrise.Margin = new System.Windows.Forms.Padding(4);
             this.CoursePrise.Name = "CoursePrise";
             this.CoursePrise.Size = new System.Drawing.Size(177, 23);
             this.CoursePrise.TabIndex = 16;
@@ -85,7 +85,7 @@
             // 
             this.SumPrise.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SumPrise.Location = new System.Drawing.Point(16, 84);
-            this.SumPrise.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SumPrise.Margin = new System.Windows.Forms.Padding(4);
             this.SumPrise.Name = "SumPrise";
             this.SumPrise.Size = new System.Drawing.Size(177, 23);
             this.SumPrise.TabIndex = 14;
@@ -123,7 +123,7 @@
             "Гривна",
             "Рубль"});
             this.ChoiseCurrency.Location = new System.Drawing.Point(16, 34);
-            this.ChoiseCurrency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChoiseCurrency.Margin = new System.Windows.Forms.Padding(4);
             this.ChoiseCurrency.Name = "ChoiseCurrency";
             this.ChoiseCurrency.Size = new System.Drawing.Size(181, 25);
             this.ChoiseCurrency.TabIndex = 11;
@@ -139,7 +139,7 @@
             this.PurchasedSumDollar,
             this.CoursePurchasedSumDollar});
             this.progressDataGridView.Location = new System.Drawing.Point(211, 13);
-            this.progressDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.progressDataGridView.Name = "progressDataGridView";
             this.progressDataGridView.Size = new System.Drawing.Size(270, 187);
             this.progressDataGridView.TabIndex = 10;
@@ -193,7 +193,9 @@
             this.Controls.Add(this.progressDataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(510, 280);
+            this.MinimumSize = new System.Drawing.Size(510, 280);
             this.Name = "StartDay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Начало дня";

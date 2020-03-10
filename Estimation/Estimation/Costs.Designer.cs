@@ -65,7 +65,7 @@
             "Евро",
             "Гривна"});
             this.ChoiseCurrency.Location = new System.Drawing.Point(13, 88);
-            this.ChoiseCurrency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChoiseCurrency.Margin = new System.Windows.Forms.Padding(4);
             this.ChoiseCurrency.Name = "ChoiseCurrency";
             this.ChoiseCurrency.Size = new System.Drawing.Size(181, 25);
             this.ChoiseCurrency.TabIndex = 14;
@@ -81,9 +81,9 @@
             this.PurchasedSumDollar,
             this.CoursePurchasedSumDollar});
             this.progressDataGridView.Location = new System.Drawing.Point(209, 13);
-            this.progressDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.progressDataGridView.Name = "progressDataGridView";
-            this.progressDataGridView.Size = new System.Drawing.Size(351, 226);
+            this.progressDataGridView.Size = new System.Drawing.Size(267, 226);
             this.progressDataGridView.TabIndex = 13;
             // 
             // PurchasedSumDollar
@@ -120,7 +120,7 @@
             "Приход",
             "Расход"});
             this.typeOfOperations.Location = new System.Drawing.Point(13, 36);
-            this.typeOfOperations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeOfOperations.Margin = new System.Windows.Forms.Padding(4);
             this.typeOfOperations.Name = "typeOfOperations";
             this.typeOfOperations.Size = new System.Drawing.Size(181, 25);
             this.typeOfOperations.TabIndex = 16;
@@ -133,7 +133,7 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 253);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(573, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(489, 25);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 278);
+            this.ClientSize = new System.Drawing.Size(489, 278);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.typeOfOperations);
@@ -155,7 +155,9 @@
             this.Controls.Add(this.progressDataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(505, 317);
+            this.MinimumSize = new System.Drawing.Size(505, 317);
             this.Name = "Costs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расходы";

@@ -53,7 +53,7 @@
             this.SumOfExpense,
             this.DescriptionOfExpense});
             this.expensesDataGridView.Location = new System.Drawing.Point(203, 13);
-            this.expensesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.expensesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.expensesDataGridView.Name = "expensesDataGridView";
             this.expensesDataGridView.Size = new System.Drawing.Size(359, 220);
             this.expensesDataGridView.TabIndex = 11;
@@ -78,7 +78,7 @@
             // 
             this.AddExpenses.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.AddExpenses.Location = new System.Drawing.Point(34, 182);
-            this.AddExpenses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddExpenses.Margin = new System.Windows.Forms.Padding(4);
             this.AddExpenses.Name = "AddExpenses";
             this.AddExpenses.Size = new System.Drawing.Size(144, 41);
             this.AddExpenses.TabIndex = 22;
@@ -90,7 +90,7 @@
             // 
             this.expensesDescription.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.expensesDescription.Location = new System.Drawing.Point(16, 84);
-            this.expensesDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.expensesDescription.Margin = new System.Windows.Forms.Padding(4);
             this.expensesDescription.Multiline = true;
             this.expensesDescription.Name = "expensesDescription";
             this.expensesDescription.Size = new System.Drawing.Size(177, 90);
@@ -112,7 +112,7 @@
             // 
             this.SumPrise.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.SumPrise.Location = new System.Drawing.Point(16, 36);
-            this.SumPrise.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SumPrise.Margin = new System.Windows.Forms.Padding(4);
             this.SumPrise.Name = "SumPrise";
             this.SumPrise.Size = new System.Drawing.Size(177, 21);
             this.SumPrise.TabIndex = 19;
@@ -142,7 +142,9 @@
             this.Controls.Add(this.expensesDataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(591, 287);
+            this.MinimumSize = new System.Drawing.Size(591, 287);
             this.Name = "ExpensesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расходы";

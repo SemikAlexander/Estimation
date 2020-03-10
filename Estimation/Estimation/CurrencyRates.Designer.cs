@@ -58,9 +58,9 @@
             this.groupBox1.Controls.Add(this.DollarPurchase);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(237, 102);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -92,7 +92,7 @@
             // 
             this.DollarSale.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.DollarSale.Location = new System.Drawing.Point(105, 61);
-            this.DollarSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DollarSale.Margin = new System.Windows.Forms.Padding(4);
             this.DollarSale.Name = "DollarSale";
             this.DollarSale.Size = new System.Drawing.Size(123, 24);
             this.DollarSale.TabIndex = 1;
@@ -102,7 +102,7 @@
             // 
             this.DollarPurchase.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.DollarPurchase.Location = new System.Drawing.Point(106, 29);
-            this.DollarPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DollarPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.DollarPurchase.Name = "DollarPurchase";
             this.DollarPurchase.Size = new System.Drawing.Size(123, 24);
             this.DollarPurchase.TabIndex = 0;
@@ -116,9 +116,9 @@
             this.groupBox2.Controls.Add(this.EuroPurchase);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(13, 123);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(237, 102);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -150,7 +150,7 @@
             // 
             this.EuroSale.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.EuroSale.Location = new System.Drawing.Point(105, 61);
-            this.EuroSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EuroSale.Margin = new System.Windows.Forms.Padding(4);
             this.EuroSale.Name = "EuroSale";
             this.EuroSale.Size = new System.Drawing.Size(123, 24);
             this.EuroSale.TabIndex = 1;
@@ -160,7 +160,7 @@
             // 
             this.EuroPurchase.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.EuroPurchase.Location = new System.Drawing.Point(105, 26);
-            this.EuroPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EuroPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.EuroPurchase.Name = "EuroPurchase";
             this.EuroPurchase.Size = new System.Drawing.Size(123, 24);
             this.EuroPurchase.TabIndex = 0;
@@ -174,9 +174,9 @@
             this.groupBox3.Controls.Add(this.HryvnaPurchase);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(13, 233);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(237, 102);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -208,7 +208,7 @@
             // 
             this.HryvnaSale.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.HryvnaSale.Location = new System.Drawing.Point(105, 61);
-            this.HryvnaSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HryvnaSale.Margin = new System.Windows.Forms.Padding(4);
             this.HryvnaSale.Name = "HryvnaSale";
             this.HryvnaSale.Size = new System.Drawing.Size(123, 24);
             this.HryvnaSale.TabIndex = 1;
@@ -218,7 +218,7 @@
             // 
             this.HryvnaPurchase.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.HryvnaPurchase.Location = new System.Drawing.Point(105, 26);
-            this.HryvnaPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HryvnaPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.HryvnaPurchase.Name = "HryvnaPurchase";
             this.HryvnaPurchase.Size = new System.Drawing.Size(123, 24);
             this.HryvnaPurchase.TabIndex = 0;
@@ -228,7 +228,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button1.Location = new System.Drawing.Point(38, 343);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 43);
             this.button1.TabIndex = 6;
@@ -247,7 +247,9 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(285, 443);
+            this.MinimumSize = new System.Drawing.Size(285, 443);
             this.Name = "CurrencyRates";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Курсы валют";

@@ -22,7 +22,7 @@ namespace Estimation.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Estimation.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Estimation.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Estimation.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,10 +63,23 @@ namespace Estimation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Exchange {
+        public static System.Drawing.Icon Exchange {
             get {
                 object obj = ResourceManager.GetObject("Exchange", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Программа «Обмен валюты» предназначена для ежедневного использования пунктами обмена валют, для улучшения и автоматизации работы. 
+        ///В функционал приложения входят:
+        ///•  Вывод на рабочий экран программы все выполняемые действия (покупка или продажа валюты)
+        ///•  Расчёт «прихода» и «расхода», а также прибыли, которую имеет обменный пункт с учётом различных расходов расходов.
+        ///•  Генерация файла формата .docx с детальным отчётом о всех операциях, которые были произведены кассиром, а также расчётом прибыли и расхо [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Общая_информация {
+            get {
+                return ResourceManager.GetString("Общая_информация", resourceCulture);
             }
         }
     }
