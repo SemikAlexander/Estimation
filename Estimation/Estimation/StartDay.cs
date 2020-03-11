@@ -32,7 +32,7 @@ namespace Estimation
 
         private void CoursePrise_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
             if (e.KeyChar == 13)
             {

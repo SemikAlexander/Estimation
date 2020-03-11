@@ -36,6 +36,7 @@ namespace Estimation
 
         public void AddData(string curse, string price, int choiseCurrency, string act)
         {
+            curse = curse.Replace(",", ".");
             switch (act)
             {
                 case "purchase":
@@ -82,6 +83,7 @@ namespace Estimation
         }
         public void AddData(string curse, string price, int choiseCurrency)
         {
+            curse = curse.Replace(",", ".");
             switch (choiseCurrency)
             {
                 case 0:

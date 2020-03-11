@@ -48,49 +48,56 @@ namespace Estimation
                     }
                 }
             }
-            Settings.Default["DollarPurchase"] = Convert.ToDouble(DollarPurchase.Text);
-            Settings.Default["DollarSale"] = Convert.ToDouble(DollarSale.Text);
-            Settings.Default["EuroPurchase"] = Convert.ToDouble(EuroPurchase.Text);
-            Settings.Default["EuroSale"] = Convert.ToDouble(EuroSale.Text);
-            Settings.Default["HryvnaPurchase"] = Convert.ToDouble(HryvnaPurchase.Text);
-            Settings.Default["HryvnaSale"] = Convert.ToDouble(HryvnaSale.Text);
+            Settings.Default["DollarPurchase"] = Convert.ToDouble(ReplaceOnPoint(DollarPurchase.Text));
+            Settings.Default["DollarSale"] = Convert.ToDouble(ReplaceOnPoint(DollarSale.Text));
+            Settings.Default["EuroPurchase"] = Convert.ToDouble(ReplaceOnPoint(EuroPurchase.Text));
+            Settings.Default["EuroSale"] = Convert.ToDouble(ReplaceOnPoint(EuroSale.Text));
+            Settings.Default["HryvnaPurchase"] = Convert.ToDouble(ReplaceOnPoint(HryvnaPurchase.Text));
+            Settings.Default["HryvnaSale"] = Convert.ToDouble(ReplaceOnPoint(HryvnaSale.Text));
             MessageBox.Show("Данные добавлены!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+
+        string ReplaceOnPoint(string currency)
+        {
+            currency = currency.Replace(",", ".");
+            return currency;
+        }
+
         #region Logic for textbox
         private void DollarPurchase_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 
         private void DollarSale_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 
         private void EuroPurchase_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 
         private void EuroSale_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 
         private void HryvnaPurchase_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
 
         private void HryvnaSale_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 8)
+            if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
         }
         #endregion
