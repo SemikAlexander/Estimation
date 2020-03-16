@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Estimation.Properties;
 
 namespace Estimation
@@ -43,17 +44,17 @@ namespace Estimation
                     switch (choiseCurrency)
                     {
                         case 0:
-                            currency.Course = Convert.ToDouble(curse);
+                            currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                             currency.Sum = Convert.ToInt32(price);
                             dollar.Add(currency);
                             break;
                         case 1:
-                            currency.Course = Convert.ToDouble(curse);
+                            currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                             currency.Sum = Convert.ToInt32(price);
                             euro.Add(currency);
                             break;
                         case 2:
-                            currency.Course = Convert.ToDouble(curse);
+                            currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                             currency.Sum = Convert.ToInt32(price);
                             hryvnia.Add(currency);
                             break;
@@ -63,17 +64,17 @@ namespace Estimation
                     switch (choiseCurrency)
                     {
                         case 0:
-                            currency.Course = Convert.ToDouble(curse);
+                            currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                             currency.Sum = Convert.ToInt32(price);
                             saleDollar.Add(currency);
                             break;
                         case 1:
-                            currency.Course = Convert.ToDouble(curse);
+                            currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                             currency.Sum = Convert.ToInt32(price);
                             saleEuro.Add(currency);
                             break;
                         case 2:
-                            currency.Course = Convert.ToDouble(curse);
+                            currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                             currency.Sum = Convert.ToInt32(price);
                             saleHryvnia.Add(currency);
                             break;
@@ -87,17 +88,17 @@ namespace Estimation
             switch (choiseCurrency)
             {
                 case 0:
-                    currency.Course = Convert.ToDouble(curse);
+                    currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                     currency.Sum = Convert.ToInt32(price);
                     startDollar.Add(currency);
                     break;
                 case 1:
-                    currency.Course = Convert.ToDouble(curse);
+                    currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                     currency.Sum = Convert.ToInt32(price);
                     startEuro.Add(currency);
                     break;
                 case 2:
-                    currency.Course = Convert.ToDouble(curse);
+                    currency.Course = double.Parse(curse, CultureInfo.InvariantCulture);
                     currency.Sum = Convert.ToInt32(price);
                     startHryvnia.Add(currency);
                     break;

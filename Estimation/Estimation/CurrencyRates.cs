@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,16 +45,21 @@ namespace Estimation
                                 MessageBox.Show("Не все поля заполнены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
+                            if (CheckIsDublicate(textbox.Text) == true)
+                            {
+                                textbox.Text = "";
+                                return;
+                            }
                         }
                     }
                 }
             }
-            Settings.Default["DollarPurchase"] = Convert.ToDouble(ReplaceOnPoint(DollarPurchase.Text));
-            Settings.Default["DollarSale"] = Convert.ToDouble(ReplaceOnPoint(DollarSale.Text));
-            Settings.Default["EuroPurchase"] = Convert.ToDouble(ReplaceOnPoint(EuroPurchase.Text));
-            Settings.Default["EuroSale"] = Convert.ToDouble(ReplaceOnPoint(EuroSale.Text));
-            Settings.Default["HryvnaPurchase"] = Convert.ToDouble(ReplaceOnPoint(HryvnaPurchase.Text));
-            Settings.Default["HryvnaSale"] = Convert.ToDouble(ReplaceOnPoint(HryvnaSale.Text));
+            Settings.Default["DollarPurchase"] = double.Parse(ReplaceOnPoint(DollarPurchase.Text), CultureInfo.InvariantCulture);
+            Settings.Default["DollarSale"] = double.Parse(ReplaceOnPoint(DollarSale.Text), CultureInfo.InvariantCulture);
+            Settings.Default["EuroPurchase"] = double.Parse(ReplaceOnPoint(EuroPurchase.Text), CultureInfo.InvariantCulture);
+            Settings.Default["EuroSale"] = double.Parse(ReplaceOnPoint(EuroSale.Text), CultureInfo.InvariantCulture);
+            Settings.Default["HryvnaPurchase"] = double.Parse(ReplaceOnPoint(HryvnaPurchase.Text), CultureInfo.InvariantCulture);
+            Settings.Default["HryvnaSale"] = double.Parse(ReplaceOnPoint(HryvnaSale.Text), CultureInfo.InvariantCulture);
             MessageBox.Show("Данные добавлены!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -62,6 +68,32 @@ namespace Estimation
         {
             currency = currency.Replace(",", ".");
             return currency;
+        }
+
+        public bool CheckIsDublicate(string inputString)
+        {
+            int points = 0;
+            for (int i = 0; i < inputString.Length; i++)
+            {
+                if (points > 1)
+                {
+                    MessageBox.Show("Ошибка ввода. Много запятых!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+                if (inputString[i] == '.' | inputString[i] == ',')
+                    points++;
+            }
+            if (inputString[0] == '.' | inputString[0] == ',')
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            if (inputString[inputString.Length - 1] == '.' | inputString[inputString.Length - 1] == ',')
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
         }
 
         #region Logic for textbox

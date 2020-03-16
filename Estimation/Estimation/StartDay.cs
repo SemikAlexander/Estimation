@@ -38,6 +38,7 @@ namespace Estimation
             {
                 if (!string.IsNullOrWhiteSpace(CoursePrise.Text))
                 {
+                    CheckIsDublicate(CoursePrise.Text);
                     AddBoughtCurrency.Focus();
                 }
             }
@@ -159,6 +160,33 @@ namespace Estimation
                         FillingTable();
                         break;
                 }
+            }
+        }
+        public void CheckIsDublicate(string inputString)
+        {
+            int points = 0;
+            for (int i = 0; i < inputString.Length; i++)
+            {
+                if (points > 1)
+                {
+                    MessageBox.Show("Ошибка ввода. Много запятых!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CoursePrise.Text = "";
+                    return;
+                }
+                if (inputString[i] == '.' | inputString[i] == ',')
+                    points++;
+            }
+            if (inputString[0] == '.' | inputString[0] == ',')
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CoursePrise.Text = "";
+                return;
+            }
+            if (inputString[inputString.Length - 1] == '.' | inputString[inputString.Length - 1] == ',')
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CoursePrise.Text = "";
+                return;
             }
         }
     }

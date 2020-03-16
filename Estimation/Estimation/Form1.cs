@@ -26,12 +26,8 @@ namespace Estimation
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 8)
                 e.Handled = true;
             if (e.KeyChar == 13)
-            {
                 if (!string.IsNullOrWhiteSpace(SumPrise.Text))
-                {
                     CoursePrise.Focus();
-                }
-            }
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -39,12 +35,11 @@ namespace Estimation
             if ((e.KeyChar < 48 || e.KeyChar >= 58) && e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
                 e.Handled = true;
             if (e.KeyChar == 13)
-            {
                 if (!string.IsNullOrWhiteSpace(CoursePrise.Text))
                 {
+                    CheckIsDublicate(CoursePrise.Text);
                     AddBoughtCurrency.Focus();
                 }
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -363,5 +358,33 @@ namespace Estimation
             HelpForm helpForm = new HelpForm();
             helpForm.Show();
         }
+
+        public void CheckIsDublicate(string inputString)
+        {
+            int points = 0;
+            for (int i = 0; i < inputString.Length; i++)
+            {
+                if (points > 1)
+                {
+                    MessageBox.Show("Ошибка ввода. Много запятых!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CoursePrise.Text = "";
+                    return;
+                }
+                if (inputString[i] == '.' | inputString[i] == ',')
+                    points++;
+            }
+            if(inputString[0] == '.' | inputString[0] == ',')
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CoursePrise.Text = "";
+                return;
+            }
+            if (inputString[inputString.Length - 1] == '.' | inputString[inputString.Length - 1] == ',')
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CoursePrise.Text = "";
+                return;
+            }
+        }  
     }
 }
